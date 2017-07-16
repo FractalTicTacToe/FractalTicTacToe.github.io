@@ -4,19 +4,44 @@
 <title>Fractal Tic Tac Toe</title>
  <style>
     body{background-color:#5190ED;}
+    div.header{width:1000px;height:120px;background-color:#E5E5E5;margin-left:-500px;left:50%;position:absolute;}
+    div.game{
+	background-color:red;
+	position:absolute;
+	width:600px;
+	height:600px;
+	top:150px;
+	left:50%;
+	margin-left:-300px;
+	margin-bottom:30px;
+    }
   </style>
 </head>
 
  
    <body>
-     
-      <div style="background-color:red; width:300px; height:100px; position:absolute; top:10px; left:80px; z-index:2">
+      <div class="header">
+	<h1 style="text-align:center">
+	Fractal Tic-Tac-Toe
+	</h1>
+	<h3 style="text-align:center";>
+	Website Created By: Jonathon Kuo
+	</h3>
+
+</div>     
+      <div class="game" style="z-index:1;">
+	
+
+
+
       </div>
       
-      <div style="background-color:yellow; width:300px; height:100px; position:absolute; top:10px; left:35px; z-index:1;">
+      <div style="background-color:transparent; width:300px; height:100px; position:absolute; top:10px; left:35px; z-index:2;">
+	
+
       </div>
       
-      <div style="background-color:green; width:300px; height:100px; position:absolute; top:10px; left:120px; z-index:3;">
+      <div style="background-color:transparent; width:300px; height:100px; position:absolute; top:10px; left:120px; z-index:3;">
       </div>
    
 </body>
