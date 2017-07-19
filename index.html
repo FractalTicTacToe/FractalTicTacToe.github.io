@@ -254,17 +254,171 @@
 	</script>
       <script>
 	function isDone(arr){
-		if (arr[0]==arr[1]==arr[2] || arr[3]==arr[4]==arr[5] || arr[6]==arr[7]==arr[8] || arr[0]==arr[3]==arr[6] || arr[1]==arr[4]==arr[7] || arr[2]==arr[5]==arr[8] || arr[0]==arr[4]==arr[8] || arr[2]==arr[4]==arr[8]){
+		if ((arr[0]===arr[1]===arr[2] && arr[0]!=0) || (arr[3]===arr[4]===arr[5]  && arr[3]!=0)|| (arr[6]===arr[7]===arr[8] && arr[6]!=0) || (arr[0]===arr[3]===arr[6] && arr[0]!=0) || (arr[1]===arr[4]===arr[7] && arr[1]!=0) || (arr[2]===arr[5]===arr[8] && arr[2]!=0) || (arr[0]===arr[4]===arr[8] && arr[0]!=0) || (arr[2]===arr[4]===arr[8] && arr[2]!=0)){
 			return true;
 		}
 		return false;
 	}
       </script>
-	
+	<script>
+	document.getElementById('b1').onclick = function() {
+		if(bools[0] && document.getElementById('i1').src.indexOf('blank.PNG')>-1){
+			bools[0]=false;
+			bools[0]=true;
+			document.getElementById('s1').src="blank.PNG";
+			document.getElementById('s1').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i1').src="ex.PNG";
+				turn=2;
+				bigGameBoard[0][0]=1;
+				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
+					smallGameBoard[0]=1;
+				}
+			}else{
+				document.getElementById('i1').src="oh.PNG";
+				turn=1;
+				bigGameBoard[0][0]=2;
+				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
+					smallGameBoard[0]=2;
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[0]=false;
+				document.getElementById('s1').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Congratulations! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[0].indexOf(0)==-1){
+				bools[0]=false;
+				document.getElementById('s1').src="blank.PNG";
+				if (bigGameBoard[0].indexOf(0)!=0){
+					bools[0]=true;
+					document.getElementById('s1').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=0){
+							bools[x]=true;
+							document.getElementById("s"+parseInt(x)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			
+			
+		}
+	}
+	</script>
+	<script>
+		document.getElementById('b2').onclick = function() {
+		if(bools[0] && document.getElementById('i2').src.indexOf('blank.PNG')>-1){
+			bools[0]=false;
+			bools[1]=true;
+			document.getElementById('s1').src="blank.PNG";
+			document.getElementById('s2').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i2').src="ex.PNG";
+				turn=2;
+				bigGameBoard[0][1]=1;
+				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
+					smallGameBoard[0]=1;
+				}
+			}else{
+				document.getElementById('i2').src="oh.PNG";
+				turn=1;
+				bigGameBoard[0][1]=2;
+				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
+					smallGameBoard[0]=2;
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[1]=false;
+				document.getElementById('s2').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Congratulations! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[0].indexOf(0)==-1){
+				bools[1]=false;
+				document.getElementById('s2').src="blank.PNG";
+				if (bigGameBoard[0].indexOf(0)!=0){
+					bools[0]=true;
+					document.getElementById('s1').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=0){
+							bools[x]=true;
+							document.getElementById("s"+parseInt(x)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			
+			
+		}
+	}
+	</script>
+	<script>
+		document.getElementById('b3').onclick = function() {
+		if(bools[0] && document.getElementById('i3').src.indexOf('blank.PNG')>-1){
+			bools[0]=false;
+			bools[2]=true;
+			document.getElementById('s1').src="blank.PNG";
+			document.getElementById('s3').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i3').src="ex.PNG";
+				turn=2;
+				bigGameBoard[0][2]=1;
+				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
+					smallGameBoard[0]=1;
+				}
+			}else{
+				document.getElementById('i3').src="oh.PNG";
+				turn=1;
+				bigGameBoard[0][2]=2;
+				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
+					smallGameBoard[0]=2;
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[2]=false;
+				document.getElementById('s3').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Congratulations! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[0].indexOf(0)==-1){
+				bools[2]=false;
+				document.getElementById('s3').src="blank.PNG";
+				if (bigGameBoard[0].indexOf(0)!=0){
+					bools[0]=true;
+					document.getElementById('s1').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=0){
+							bools[x]=true;
+							document.getElementById("s"+parseInt(x)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			
+			
+		}
+	}
+	</script>
       <script>
 	document.getElementById('b31').onclick = function() {
 		if(bools[4] && document.getElementById('i31').src.indexOf('blank.PNG')>-1){
-			//Need to add conditions when squares fill
 			bools[4]=false;
 			bools[0]=true;
 			document.getElementById('s5').src="blank.PNG";
@@ -273,23 +427,43 @@
 				document.getElementById('i31').src="ex.PNG";
 				turn=2;
 				bigGameBoard[4][0]=1;
-				if (isDone(bigGameBoard[4] && smallGameBoard[4]==0)){
+				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
 					smallGameBoard[4]=1;
 				}
 			}else{
-				document.getElementById('i31').src="ex.PNG";
+				document.getElementById('i31').src="oh.PNG";
 				turn=1;
 				bigGameBoard[4][0]=2;
-				if (isDone(bigGameBoard[4] && smallGameBoard[4]==0)){
+				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
 					smallGameBoard[4]=2;
 				}
 			}
 			if (isDone(smallGameBoard)){
-				document.getElementById('winText')="Congratulations! The Winner Is:";
+				bools[0]=false;
+				document.getElementById('s1').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Congratulations! The Winner Is:";
 				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
 				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
 		
 			}
+			else if (bigGameBoard[0].indexOf(0)==-1){
+				bools[0]=false;
+				document.getElementById('s1').src="blank.PNG";
+				if (bigGameBoard[4].indexOf(0)!=0){
+					bools[4]=true;
+					document.getElementById('s5').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=0){
+							bools[x]=true;
+							document.getElementById("s"+parseInt(x)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			
 			
 		}
 	}
