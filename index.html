@@ -17,22 +17,18 @@
     }
     .gameBut{
 	background-color:transparent;
-	border:none;
+	border-color:transparent;
+	transition: all 0.5s;
     }
     .gameBut:hover{
-	background-color:yellow;
+	border-color:red;
     }
   </style>
 </head>
 
  
    <body>
-	<script>
-	var turn=1;
-	var bigGameBoard=[[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0]];
-	var smallGameBoard=[0,0,0,0,0,0,0,0,0];
-	var bools=[false,false,false,false,true,false,false,false,false];
-	</script>
+	
       <div class="header">
 	<h1 style="text-align:center">
 	Fractal Tic-Tac-Toe
@@ -41,7 +37,8 @@
 	Website Created By: Jonathon Kuo
 	</h3>
 
-</div>     
+</div>    
+
       <div class="game" style="z-index:1;">
 	<!big board>
 	<img src="board.PNG" style="width:600px;height:600px;">
@@ -65,100 +62,101 @@
 	<img id="s2" src="blank.PNG" style="width:200px;height:180px;top:30px;position:absolute;left:205px">
 	<img id="s3" src="blank.PNG" style="width:200px;height:180px;top:30px;position:absolute;left:400px">
 	<img id="s4" src="blank.PNG" style="width:200px;height:180px;top:195px;position:absolute;left:10px">
-	<img id="s5" src="blank.PNG" style="width:200px;height:180px;top:195px;position:absolute;left:205px">
+	<img id="s5" src="square.PNG" style="width:200px;height:180px;top:195px;position:absolute;left:205px">
 	<img id="s6" src="blank.PNG" style="width:200px;height:180px;top:195px;position:absolute;left:400px">
 	<img id="s7" src="blank.PNG" style="width:200px;height:180px;top:355px;position:absolute;left:10px">
 	<img id="s8" src="blank.PNG" style="width:200px;height:180px;top:355px;position:absolute;left:205px">
 	<img id="s9" src="blank.PNG" style="width:200px;height:180px;top:355px;position:absolute;left:400px">
 	</div>
-	<div class="game" style="z-index:2;">
+	<div class="game" style="z-index:20;">
 	<!buttons>
-	<button id="b1" class="gameBut" style="width:50px;height:50px;top:45px;left:28px;position:absolute">
+	<button id="b1" class="gameBut" style="width:45px;height:45px;top:45px;left:28px;position:absolute"></button>
 	<script>
 	document.getElementById('b1').onclick = function() {
-	document.getElementById('i1').src="ex.PNG";
+		
 	}
 	</script>
-	<button id="b2" style="width:50px;height:50px;top:45px;left:85px;position:absolute">
-	<button id="b3" style="width:50px;height:50px;top:45px;left:142px;position:absolute">
-	<button id="b4" style="width:50px;height:50px;top:45px;left:223px;position:absolute">
-	<button id="b5" style="width:50px;height:50px;top:45px;left:280px;position:absolute">
-	<button id="b6"  style="width:50px;height:50px;top:45px;left:335px;position:absolute">
-	<button id="b7" style="width:50px;height:50px;top:45px;left:418px;position:absolute">
-	<button id="b8"  style="width:50px;height:50px;top:45px;left:475px;position:absolute">
-	<button id="b9"  style="width:50px;height:50px;top:45px;left:530px;position:absolute">
-	<button id="b10"  style="width:50px;height:50px;top:93px;left:28px;position:absolute">
-	<button id="b11"  style="width:50px;height:50px;top:93px;left:85px;position:absolute">
-	<button id="b12" style="width:50px;height:50px;top:93px;left:142px;position:absolute">
-	<button id="b13" style="width:50px;height:50px;top:93px;left:223px;position:absolute">
-	<button id="b14" style="width:50px;height:50px;top:93px;left:280px;position:absolute">
-	<button id="b15"  style="width:50px;height:50px;top:93px;left:335px;position:absolute">
-	<button id="b16"  style="width:50px;height:50px;top:93px;left:418px;position:absolute">
-	<button id="b17"  style="width:50px;height:50px;top:93px;left:475px;position:absolute">
-	<button id="b18"  style="width:50px;height:50px;top:93px;left:530px;position:absolute">
-	<button id="b19"  style="width:50px;height:50px;top:140px;left:28px;position:absolute">
-	<button id="b20"  style="width:50px;height:50px;top:140px;left:85px;position:absolute">
-	<button id="b21"  style="width:50px;height:50px;top:140px;left:142px;position:absolute">
-	<button id="b22" style="width:50px;height:50px;top:140px;left:223px;position:absolute">
-	<button id="b23"  style="width:50px;height:50px;top:140px;left:280px;position:absolute">
-	<button id="b24"  style="width:50px;height:50px;top:140px;left:335px;position:absolute">
-	<button id="b25"  style="width:50px;height:50px;top:140px;left:418px;position:absolute">
-	<button id="b26"  style="width:50px;height:50px;top:140px;left:475px;position:absolute">
-	<button id="b27"  style="width:50px;height:50px;top:140px;left:530px;position:absolute">
-	<button id="b28"  style="width:50px;height:50px;top:210px;left:28px;position:absolute">
-	<button id="b29"  style="width:50px;height:50px;top:210px;left:85px;position:absolute">
-	<button id="b30"  style="width:50px;height:50px;top:210px;left:142px;position:absolute">
-	<button id="b31"  style="width:50px;height:50px;top:210px;left:223px;position:absolute">
-	<button id="b32"  style="width:50px;height:50px;top:210px;left:280px;position:absolute">
-	<button id="b33"  style="width:50px;height:50px;top:210px;left:335px;position:absolute">
-	<button id="b34"  style="width:50px;height:50px;top:210px;left:418px;position:absolute">
-	<button id="b35"  style="width:50px;height:50px;top:210px;left:475px;position:absolute">
-	<button id="b36"  style="width:50px;height:50px;top:210px;left:530px;position:absolute">
-	<button id="b37"  style="width:50px;height:50px;top:257px;left:28px;position:absolute">
-	<button id="b38"  style="width:50px;height:50px;top:257px;left:85px;position:absolute">
-	<button id="b39"  style="width:50px;height:50px;top:257px;left:142px;position:absolute">
-	<button id="b40"  style="width:50px;height:50px;top:257px;left:223px;position:absolute">
-	<button id="b41"  style="width:50px;height:50px;top:257px;left:280px;position:absolute">
-	<button id="b42"  style="width:50px;height:50px;top:257px;left:335px;position:absolute">
-	<button id="b43"  style="width:50px;height:50px;top:257px;left:418px;position:absolute">
-	<button id="b44"  style="width:50px;height:50px;top:257px;left:475px;position:absolute">
-	<button id="b45"  style="width:50px;height:50px;top:257px;left:530px;position:absolute">
-	<button id="b46"  style="width:50px;height:50px;top:305px;left:28px;position:absolute">
-	<button id="b47"  style="width:50px;height:50px;top:305px;left:85px;position:absolute">
-	<button id="b48"  style="width:50px;height:50px;top:305px;left:142px;position:absolute">
-	<button id="b49"  style="width:50px;height:50px;top:305px;left:223px;position:absolute">
-	<button id="b50"  style="width:50px;height:50px;top:305px;left:280px;position:absolute">
-	<button id="b51"  style="width:50px;height:50px;top:305px;left:335px;position:absolute">
-	<button id="b52"  style="width:50px;height:50px;top:305px;left:418px;position:absolute">
-	<button id="b53"  style="width:50px;height:50px;top:305px;left:475px;position:absolute">
-	<button id="b54"  style="width:50px;height:50px;top:305px;left:530px;position:absolute">
-	<button id="b55"  style="width:50px;height:50px;top:370px;left:28px;position:absolute">
-	<button id="b56"  style="width:50px;height:50px;top:370px;left:85px;position:absolute">
-	<button id="b57"  style="width:50px;height:50px;top:370px;left:142px;position:absolute">
-	<button id="b58"  style="width:50px;height:50px;top:370px;left:223px;position:absolute">
-	<button id="b59"  style="width:50px;height:50px;top:370px;left:280px;position:absolute">
-	<button id="b60"  style="width:50px;height:50px;top:370px;left:335px;position:absolute">
-	<button id="b61"  style="width:50px;height:50px;top:370px;left:418px;position:absolute">
-	<button id="b62"  style="width:50px;height:50px;top:370px;left:475px;position:absolute">
-	<button id="b63"  style="width:50px;height:50px;top:370px;left:530px;position:absolute">
-	<button id="b64"  style="width:50px;height:50px;top:417px;left:28px;position:absolute">
-	<button id="b65"  style="width:50px;height:50px;top:417px;left:85px;position:absolute">
-	<button id="b66"  style="width:50px;height:50px;top:417px;left:142px;position:absolute">
-	<button id="b67"  style="width:50px;height:50px;top:417px;left:223px;position:absolute">
-	<button id="b68"  style="width:50px;height:50px;top:417px;left:280px;position:absolute">
-	<button id="b69"  style="width:50px;height:50px;top:417px;left:335px;position:absolute">
-	<button id="b70"  style="width:50px;height:50px;top:417px;left:418px;position:absolute">
-	<button id="b71"  style="width:50px;height:50px;top:417px;left:475px;position:absolute">
-	<button id="b72"  style="width:50px;height:50px;top:417px;left:530px;position:absolute">
-	<button id="b73"  style="width:50px;height:50px;top:465px;left:28px;position:absolute">
-	<button id="b74"  style="width:50px;height:50px;top:465px;left:85px;position:absolute">
-	<button id="b75"  style="width:50px;height:50px;top:465px;left:142px;position:absolute">
-	<button id="b76"  style="width:50px;height:50px;top:465px;left:223px;position:absolute">
-	<button id="b77"  style="width:50px;height:50px;top:465px;left:280px;position:absolute">
-	<button id="b78"  style="width:50px;height:50px;top:465px;left:335px;position:absolute">
-	<button id="b79"  style="width:50px;height:50px;top:465px;left:418px;position:absolute">
-	<button id="b80"  style="width:50px;height:50px;top:465px;left:475px;position:absolute">
-	<button id="b81"  style="width:50px;height:50px;top:465px;left:530px;position:absolute">
+	<button id="b2"class="gameBut" style="width:45px;height:45px;top:45px;left:85px;position:absolute">
+	<button id="b3"class="gameBut" style="width:45px;height:45px;top:45px;left:142px;position:absolute">
+	<button id="b4" class="gameBut"style="width:45px;height:45px;top:45px;left:223px;position:absolute">
+	<button id="b5"class="gameBut" style="width:45px;height:45px;top:45px;left:280px;position:absolute">
+	<button id="b6" class="gameBut" style="width:45px;height:45px;top:45px;left:335px;position:absolute">
+	<button id="b7"class="gameBut" style="width:45px;height:45px;top:45px;left:418px;position:absolute">
+	<button id="b8"  class="gameBut"style="width:45px;height:45px;top:45px;left:475px;position:absolute">
+	<button id="b9"  class="gameBut"style="width:45px;height:45px;top:45px;left:530px;position:absolute">
+	<button id="b10" class="gameBut" style="width:45px;height:45px;top:93px;left:28px;position:absolute">
+	<button id="b11" class="gameBut" style="width:45px;height:45px;top:93px;left:85px;position:absolute">
+	<button id="b12"class="gameBut" style="width:45px;height:45px;top:93px;left:142px;position:absolute">
+	<button id="b13" class="gameBut"style="width:45px;height:45px;top:93px;left:223px;position:absolute">
+	<button id="b14" class="gameBut"style="width:45px;height:45px;top:93px;left:280px;position:absolute">
+	<button id="b15" class="gameBut" style="width:45px;height:45px;top:93px;left:335px;position:absolute">
+	<button id="b16" class="gameBut" style="width:45px;height:45px;top:93px;left:418px;position:absolute">
+	<button id="b17" class="gameBut" style="width:45px;height:45px;top:93px;left:475px;position:absolute">
+	<button id="b18" class="gameBut" style="width:45px;height:45px;top:93px;left:530px;position:absolute">
+	<button id="b19" class="gameBut" style="width:45px;height:45px;top:140px;left:28px;position:absolute">
+	<button id="b20" class="gameBut" style="width:45px;height:45px;top:140px;left:85px;position:absolute">
+	<button id="b21" class="gameBut" style="width:45px;height:45px;top:140px;left:142px;position:absolute">
+	<button id="b22"class="gameBut" style="width:45px;height:45px;top:140px;left:223px;position:absolute">
+	<button id="b23"class="gameBut"  style="width:45px;height:45px;top:140px;left:280px;position:absolute">
+	<button id="b24" class="gameBut" style="width:45px;height:45px;top:140px;left:335px;position:absolute">
+	<button id="b25" class="gameBut" style="width:45px;height:45px;top:140px;left:418px;position:absolute">
+	<button id="b26" class="gameBut" style="width:45px;height:45px;top:140px;left:475px;position:absolute">
+	<button id="b27" class="gameBut" style="width:45px;height:45px;top:140px;left:530px;position:absolute">
+	<button id="b28" class="gameBut" style="width:45px;height:45px;top:210px;left:28px;position:absolute">
+	<button id="b29" class="gameBut" style="width:45px;height:45px;top:210px;left:85px;position:absolute">
+	<button id="b30" class="gameBut" style="width:45px;height:45px;top:210px;left:142px;position:absolute">
+	<button id="b31" class="gameBut" style="width:45px;height:45px;top:210px;left:223px;position:absolute">
+	
+	<button id="b32" class="gameBut" style="width:45px;height:45px;top:210px;left:280px;position:absolute">
+	<button id="b33" class="gameBut" style="width:45px;height:45px;top:210px;left:335px;position:absolute">
+	<button id="b34" class="gameBut" style="width:45px;height:45px;top:210px;left:418px;position:absolute">
+	<button id="b35" class="gameBut" style="width:45px;height:45px;top:210px;left:475px;position:absolute">
+	<button id="b36" class="gameBut" style="width:45px;height:45px;top:210px;left:530px;position:absolute">
+	<button id="b37" class="gameBut" style="width:45px;height:45px;top:257px;left:28px;position:absolute">
+	<button id="b38" class="gameBut" style="width:45px;height:45px;top:257px;left:85px;position:absolute">
+	<button id="b39" class="gameBut" style="width:45px;height:45px;top:257px;left:142px;position:absolute">
+	<button id="b40" class="gameBut" style="width:45px;height:45px;top:257px;left:223px;position:absolute">
+	<button id="b41" class="gameBut" style="width:45px;height:45px;top:257px;left:280px;position:absolute">
+	<button id="b42" class="gameBut" style="width:45px;height:45px;top:257px;left:335px;position:absolute">
+	<button id="b43" class="gameBut" style="width:45px;height:45px;top:257px;left:418px;position:absolute">
+	<button id="b44" class="gameBut" style="width:45px;height:45px;top:257px;left:475px;position:absolute">
+	<button id="b45" class="gameBut" style="width:45px;height:45px;top:257px;left:530px;position:absolute">
+	<button id="b46" class="gameBut" style="width:45px;height:45px;top:305px;left:28px;position:absolute">
+	<button id="b47" class="gameBut" style="width:45px;height:45px;top:305px;left:85px;position:absolute">
+	<button id="b48" class="gameBut" style="width:45px;height:45px;top:305px;left:142px;position:absolute">
+	<button id="b49" class="gameBut" style="width:45px;height:45px;top:305px;left:223px;position:absolute">
+	<button id="b50" class="gameBut" style="width:45px;height:45px;top:305px;left:280px;position:absolute">
+	<button id="b51" class="gameBut" style="width:45px;height:45px;top:305px;left:335px;position:absolute">
+	<button id="b52" class="gameBut" style="width:45px;height:45px;top:305px;left:418px;position:absolute">
+	<button id="b53" class="gameBut" style="width:45px;height:45px;top:305px;left:475px;position:absolute">
+	<button id="b54" class="gameBut" style="width:45px;height:45px;top:305px;left:530px;position:absolute">
+	<button id="b55" class="gameBut" style="width:45px;height:45px;top:370px;left:28px;position:absolute">
+	<button id="b56" class="gameBut" style="width:45px;height:45px;top:370px;left:85px;position:absolute">
+	<button id="b57" class="gameBut" style="width:45px;height:45px;top:370px;left:142px;position:absolute">
+	<button id="b58" class="gameBut" style="width:45px;height:45px;top:370px;left:223px;position:absolute">
+	<button id="b59" class="gameBut" style="width:45px;height:45px;top:370px;left:280px;position:absolute">
+	<button id="b60" class="gameBut" style="width:45px;height:45px;top:370px;left:335px;position:absolute">
+	<button id="b61" class="gameBut" style="width:45px;height:45px;top:370px;left:418px;position:absolute">
+	<button id="b62" class="gameBut" style="width:45px;height:45px;top:370px;left:475px;position:absolute">
+	<button id="b63" class="gameBut" style="width:45px;height:45px;top:370px;left:530px;position:absolute">
+	<button id="b64" class="gameBut" style="width:45px;height:45px;top:417px;left:28px;position:absolute">
+	<button id="b65" class="gameBut" style="width:45px;height:45px;top:417px;left:85px;position:absolute">
+	<button id="b66" class="gameBut" style="width:45px;height:45px;top:417px;left:142px;position:absolute">
+	<button id="b67" class="gameBut" style="width:45px;height:45px;top:417px;left:223px;position:absolute">
+	<button id="b68" class="gameBut" style="width:45px;height:45px;top:417px;left:280px;position:absolute">
+	<button id="b69" class="gameBut" style="width:45px;height:45px;top:417px;left:335px;position:absolute">
+	<button id="b70" class="gameBut" style="width:45px;height:45px;top:417px;left:418px;position:absolute">
+	<button id="b71" class="gameBut" style="width:45px;height:45px;top:417px;left:475px;position:absolute">
+	<button id="b72" class="gameBut" style="width:45px;height:45px;top:417px;left:530px;position:absolute">
+	<button id="b73" class="gameBut" style="width:45px;height:45px;top:465px;left:28px;position:absolute">
+	<button id="b74" class="gameBut" style="width:45px;height:45px;top:465px;left:85px;position:absolute">
+	<button id="b75" class="gameBut" style="width:45px;height:45px;top:465px;left:142px;position:absolute">
+	<button id="b76" class="gameBut" style="width:45px;height:45px;top:465px;left:223px;position:absolute">
+	<button id="b77" class="gameBut" style="width:45px;height:45px;top:465px;left:280px;position:absolute">
+	<button id="b78" class="gameBut" style="width:45px;height:45px;top:465px;left:335px;position:absolute">
+	<button id="b79" class="gameBut" style="width:45px;height:45px;top:465px;left:418px;position:absolute">
+	<button id="b80" class="gameBut" style="width:45px;height:45px;top:465px;left:475px;position:absolute">
+	<button id="b81" class="gameBut" style="width:45px;height:45px;top:465px;left:530px;position:absolute">
 	</div>
       <div class="game" style="z-index:5;">
 	<!exes and ohs>
@@ -244,6 +242,57 @@
 	<img id="i80" src="blank.PNG" style="width:50px;height:50px;top:465px;left:475px;position:absolute">
 	<img id="i81" src="blank.PNG" style="width:50px;height:50px;top:465px;left:530px;position:absolute">
       </div>
-   
+	<div style="background-color:transparent;position:absolute;width:200px;height:200px;left:50%;margin-left:-100px;top:700px;margin-bottom:30px">
+	<h2 id="winText" style="text-align:center"></h2>
+	<img id="winIMG" src="blank.PNG"style="width:100px;height:100px;margin:auto;display:block">
+	</div>
+	<script>
+	var turn=1;
+	var bigGameBoard=[[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0]];
+	var smallGameBoard=[0,0,0,0,0,0,0,0,0];
+	var bools=[false,false,false,false,true,false,false,false,false];
+	</script>
+      <script>
+	function isDone(arr){
+		if (arr[0]==arr[1]==arr[2] || arr[3]==arr[4]==arr[5] || arr[6]==arr[7]==arr[8] || arr[0]==arr[3]==arr[6] || arr[1]==arr[4]==arr[7] || arr[2]==arr[5]==arr[8] || arr[0]==arr[4]==arr[8] || arr[2]==arr[4]==arr[8]){
+			return true;
+		}
+		return false;
+	}
+      </script>
+	
+      <script>
+	document.getElementById('b31').onclick = function() {
+		if(bools[4] && document.getElementById('i31').src.indexOf('blank.PNG')>-1){
+			<!Need to add conditions when squares fill>
+			bools[4]=false;
+			bools[0]=true;
+			document.getElementById('s5').src="blank.PNG";
+			document.getElementById('s1').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i31').src="ex.PNG";
+				turn=2;
+				bigGameBoard[4][0]=1;
+				if (isDone(bigGameBoard[4] && smallGameBoard[4]==0)){
+					smallGameBoard[4]=1;
+				}
+			}else{
+				document.getElementById('i31').src="ex.PNG";
+				turn=1;
+				bigGameBoard[4][0]=2;
+				if (isDone(bigGameBoard[4] && smallGameBoard[4]==0)){
+					smallGameBoard[4]=2;
+				}
+			}
+			if (isDone(smallGameBoard)){
+				document.getElementById('winText')="Congratulations! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+		
+			}
+			
+		}
+	}
+	</script>
 </body>
 </html>
