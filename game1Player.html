@@ -1929,6 +1929,7 @@ function computePlay(){
 				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
 					smallGameBoard[4]=1;
 				}
+				computePlay();
 			}else{
 				document.getElementById('i31').src="oh.PNG";
 				document.getElementById('winIMG').src="ex.PNG";
