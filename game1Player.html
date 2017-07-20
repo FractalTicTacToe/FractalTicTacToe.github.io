@@ -268,6 +268,7 @@
 function computePlay(){
   var max=0;
   var ret=0;
+  var gameDict = [0,0,0,0,0,0,0,0,0];
   for (x=0;x<9;x++){
     var count=0;
    
@@ -275,14 +276,17 @@ function computePlay(){
     for (j=0;j<9;j++){
       if (bigGameBoard[x][j]==1) count++;
     }
-    if (count>max){
-      max=count;
-      ret=x;
-    }
+    gameDict[x]=[x,count];
+  }
+  gameDict.sort(function(first,second){
+	  return second[1]-first[1];
   }
   for (k=0;k<9;k++){
     if (bools[k]){
-      document.getElementById('b'+squareMap[k][ret]).click();
+      for (y=0;y<9;y++){
+	      var index=gameDict[y][0];
+	      document.getElementById('b'+squareMap[k][index]).click();
+      }
     }
   }
 }
