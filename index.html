@@ -244,8 +244,8 @@
 	<img id="i81" src="blank.PNG" style="width:50px;height:50px;top:465px;left:530px;position:absolute">
       </div>
 	<div style="background-color:transparent;position:absolute;width:200px;height:200px;left:50%;margin-left:-100px;top:700px;margin-bottom:30px">
-	<h2 id="winText" style="text-align:center"></h2>
-	<img id="winIMG" src="blank.PNG"style="width:100px;height:100px;margin:auto;display:block">
+	<h2 id="winText" style="text-align:center">Turn</h2>
+	<img id="winIMG" src="ex.PNG"style="width:100px;height:100px;margin:auto;display:block">
 	</div>
 	<script>
 	var turn=1;
@@ -274,6 +274,7 @@
 			document.getElementById('s1').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i1').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[0][0]=1;
 				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
@@ -281,6 +282,7 @@
 				}
 			}else{
 				document.getElementById('i1').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[0][0]=2;
 				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
@@ -327,6 +329,7 @@
 			document.getElementById('s2').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i2').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[0][1]=1;
 				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
@@ -334,6 +337,7 @@
 				}
 			}else{
 				document.getElementById('i2').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[0][1]=2;
 				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
@@ -379,6 +383,7 @@
 			document.getElementById('s3').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i3').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[0][2]=1;
 				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
@@ -386,6 +391,7 @@
 				}
 			}else{
 				document.getElementById('i3').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[0][2]=2;
 				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
@@ -432,6 +438,7 @@
 			document.getElementById('s1').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i4').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[1][0]=1;
 				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
@@ -439,6 +446,7 @@
 				}
 			}else{
 				document.getElementById('i4').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[1][0]=2;
 				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
@@ -484,6 +492,7 @@
 			document.getElementById('s2').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i5').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[1][1]=1;
 				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
@@ -491,6 +500,7 @@
 				}
 			}else{
 				document.getElementById('i5').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[1][1]=2;
 				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
@@ -536,6 +546,7 @@
 			document.getElementById('s3').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i6').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[1][2]=1;
 				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
@@ -543,6 +554,7 @@
 				}
 			}else{
 				document.getElementById('i6').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[1][2]=2;
 				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
@@ -588,6 +600,7 @@
 			document.getElementById('s1').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i7').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[2][0]=1;
 				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
@@ -595,6 +608,7 @@
 				}
 			}else{
 				document.getElementById('i7').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[2][0]=2;
 				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
@@ -640,6 +654,7 @@
 			document.getElementById('s2').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i8').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[2][1]=1;
 				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
@@ -647,6 +662,7 @@
 				}
 			}else{
 				document.getElementById('i8').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[2][1]=2;
 				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
@@ -692,6 +708,7 @@
 			document.getElementById('s3').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i9').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[2][2]=1;
 				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
@@ -699,6 +716,7 @@
 				}
 			}else{
 				document.getElementById('i9').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[2][2]=2;
 				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
@@ -744,6 +762,7 @@
 			document.getElementById('s4').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i10').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[0][3]=1;
 				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
@@ -751,6 +770,7 @@
 				}
 			}else{
 				document.getElementById('i10').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[0][3]=2;
 				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
@@ -796,6 +816,7 @@
 			document.getElementById('s5').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i11').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[0][4]=1;
 				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
@@ -803,6 +824,7 @@
 				}
 			}else{
 				document.getElementById('i11').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[0][4]=2;
 				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
@@ -848,6 +870,7 @@
 			document.getElementById('s6').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i12').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[0][5]=1;
 				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
@@ -855,6 +878,7 @@
 				}
 			}else{
 				document.getElementById('i12').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[0][5]=2;
 				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
@@ -900,6 +924,7 @@
 			document.getElementById('s4').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i13').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[1][3]=1;
 				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
@@ -907,6 +932,7 @@
 				}
 			}else{
 				document.getElementById('i13').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[1][3]=2;
 				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
@@ -953,6 +979,7 @@
 			document.getElementById('s5').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i14').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[1][4]=1;
 				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
@@ -960,6 +987,7 @@
 				}
 			}else{
 				document.getElementById('i14').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[1][4]=2;
 				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
@@ -1006,6 +1034,7 @@
 			document.getElementById('s6').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i15').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[1][5]=1;
 				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
@@ -1013,6 +1042,7 @@
 				}
 			}else{
 				document.getElementById('i15').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[1][5]=2;
 				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
@@ -1058,6 +1088,7 @@
 			document.getElementById('s4').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i16').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[2][3]=1;
 				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
@@ -1065,6 +1096,7 @@
 				}
 			}else{
 				document.getElementById('i16').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[2][3]=2;
 				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
@@ -1110,6 +1142,7 @@
 			document.getElementById('s5').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i17').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[2][4]=1;
 				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
@@ -1117,6 +1150,7 @@
 				}
 			}else{
 				document.getElementById('i17').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[2][4]=2;
 				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
@@ -1162,6 +1196,7 @@
 			document.getElementById('s6').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i18').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[2][5]=1;
 				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
@@ -1169,6 +1204,7 @@
 				}
 			}else{
 				document.getElementById('i18').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[2][5]=2;
 				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
@@ -1214,6 +1250,7 @@
 			document.getElementById('s7').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i19').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[0][6]=1;
 				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
@@ -1221,6 +1258,7 @@
 				}
 			}else{
 				document.getElementById('i19').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[0][6]=2;
 				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
@@ -1266,6 +1304,7 @@
 			document.getElementById('s8').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i20').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[0][7]=1;
 				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
@@ -1273,6 +1312,7 @@
 				}
 			}else{
 				document.getElementById('i20').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[0][7]=2;
 				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
@@ -1318,6 +1358,7 @@
 			document.getElementById('s9').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i21').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[0][8]=1;
 				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
@@ -1325,6 +1366,7 @@
 				}
 			}else{
 				document.getElementById('i21').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[0][8]=2;
 				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
@@ -1370,6 +1412,7 @@
 			document.getElementById('s7').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i22').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[1][6]=1;
 				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
@@ -1377,6 +1420,7 @@
 				}
 			}else{
 				document.getElementById('i22').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[1][6]=2;
 				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
@@ -1422,6 +1466,7 @@
 			document.getElementById('s8').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i23').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[1][7]=1;
 				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
@@ -1429,6 +1474,7 @@
 				}
 			}else{
 				document.getElementById('i23').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[1][7]=2;
 				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
@@ -1474,6 +1520,7 @@
 			document.getElementById('s9').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i24').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[1][8]=1;
 				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
@@ -1481,6 +1528,7 @@
 				}
 			}else{
 				document.getElementById('i24').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[1][8]=2;
 				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
@@ -1526,6 +1574,7 @@
 			document.getElementById('s7').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i25').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[2][6]=1;
 				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
@@ -1533,6 +1582,7 @@
 				}
 			}else{
 				document.getElementById('i25').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[2][6]=2;
 				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
@@ -1578,6 +1628,7 @@
 			document.getElementById('s8').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i26').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[2][7]=1;
 				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
@@ -1585,6 +1636,7 @@
 				}
 			}else{
 				document.getElementById('i26').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[2][7]=2;
 				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
@@ -1630,6 +1682,7 @@
 			document.getElementById('s9').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i27').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[2][8]=1;
 				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
@@ -1637,6 +1690,7 @@
 				}
 			}else{
 				document.getElementById('i27').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[2][8]=2;
 				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
@@ -1683,6 +1737,7 @@
 			document.getElementById('s1').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i28').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[3][0]=1;
 				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
@@ -1690,6 +1745,7 @@
 				}
 			}else{
 				document.getElementById('i28').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[3][0]=2;
 				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
@@ -1736,6 +1792,7 @@
 			document.getElementById('s2').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i29').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[3][1]=1;
 				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
@@ -1743,6 +1800,7 @@
 				}
 			}else{
 				document.getElementById('i29').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[3][1]=2;
 				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
@@ -1789,6 +1847,7 @@
 			document.getElementById('s3').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i30').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[3][2]=1;
 				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
@@ -1796,6 +1855,7 @@
 				}
 			}else{
 				document.getElementById('i30').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[3][2]=2;
 				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
@@ -1842,6 +1902,7 @@
 			document.getElementById('s1').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i31').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[4][0]=1;
 				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
@@ -1849,6 +1910,7 @@
 				}
 			}else{
 				document.getElementById('i31').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[4][0]=2;
 				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
@@ -1894,6 +1956,7 @@
 			document.getElementById('s2').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i32').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[4][1]=1;
 				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
@@ -1901,6 +1964,7 @@
 				}
 			}else{
 				document.getElementById('i32').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[4][1]=2;
 				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
@@ -1948,6 +2012,7 @@
 			document.getElementById('s3').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i33').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[4][2]=1;
 				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
@@ -1955,6 +2020,7 @@
 				}
 			}else{
 				document.getElementById('i33').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[4][2]=2;
 				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
@@ -2001,6 +2067,7 @@
 			document.getElementById('s1').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i34').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[5][0]=1;
 				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
@@ -2008,6 +2075,7 @@
 				}
 			}else{
 				document.getElementById('i34').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[5][0]=2;
 				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
@@ -2055,6 +2123,7 @@
 			document.getElementById('s2').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i35').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[5][1]=1;
 				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
@@ -2062,6 +2131,7 @@
 				}
 			}else{
 				document.getElementById('i35').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[5][1]=2;
 				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
@@ -2108,6 +2178,7 @@
 			document.getElementById('s3').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i36').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[5][2]=1;
 				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
@@ -2115,6 +2186,7 @@
 				}
 			}else{
 				document.getElementById('i36').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[5][2]=2;
 				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
@@ -2160,6 +2232,7 @@
 			document.getElementById('s4').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i37').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[3][3]=1;
 				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
@@ -2167,6 +2240,7 @@
 				}
 			}else{
 				document.getElementById('i37').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[3][3]=2;
 				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
@@ -2214,6 +2288,7 @@
 			document.getElementById('s5').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i38').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[3][4]=1;
 				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
@@ -2221,6 +2296,7 @@
 				}
 			}else{
 				document.getElementById('i38').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[3][4]=2;
 				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
@@ -2267,6 +2343,7 @@
 			document.getElementById('s6').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i39').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[3][5]=1;
 				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
@@ -2274,6 +2351,7 @@
 				}
 			}else{
 				document.getElementById('i39').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[3][5]=2;
 				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
@@ -2319,6 +2397,7 @@
 			document.getElementById('s4').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i40').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[4][3]=1;
 				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
@@ -2326,6 +2405,7 @@
 				}
 			}else{
 				document.getElementById('i40').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[4][3]=2;
 				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
@@ -2371,6 +2451,7 @@
 			document.getElementById('s5').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i41').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[4][4]=1;
 				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
@@ -2378,6 +2459,7 @@
 				}
 			}else{
 				document.getElementById('i41').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[4][4]=2;
 				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
@@ -2423,6 +2505,7 @@
 			document.getElementById('s6').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i42').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[4][5]=1;
 				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
@@ -2430,6 +2513,7 @@
 				}
 			}else{
 				document.getElementById('i42').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[4][5]=2;
 				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
@@ -2475,6 +2559,7 @@
 			document.getElementById('s4').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i43').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[5][3]=1;
 				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
@@ -2482,6 +2567,7 @@
 				}
 			}else{
 				document.getElementById('i43').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[5][3]=2;
 				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
@@ -2527,6 +2613,7 @@
 			document.getElementById('s5').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i44').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[5][4]=1;
 				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
@@ -2534,6 +2621,7 @@
 				}
 			}else{
 				document.getElementById('i44').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[5][4]=2;
 				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
@@ -2579,6 +2667,7 @@
 			document.getElementById('s6').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i45').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[5][5]=1;
 				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
@@ -2586,6 +2675,7 @@
 				}
 			}else{
 				document.getElementById('i45').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[5][5]=2;
 				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
@@ -2632,6 +2722,7 @@
 			document.getElementById('s7').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i46').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[3][6]=1;
 				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
@@ -2639,6 +2730,7 @@
 				}
 			}else{
 				document.getElementById('i46').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[3][6]=2;
 				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
@@ -2684,6 +2776,7 @@
 			document.getElementById('s8').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i47').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[3][7]=1;
 				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
@@ -2691,6 +2784,7 @@
 				}
 			}else{
 				document.getElementById('i47').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[3][7]=2;
 				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
@@ -2736,6 +2830,7 @@
 			document.getElementById('s9').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i48').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[3][8]=1;
 				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
@@ -2743,6 +2838,7 @@
 				}
 			}else{
 				document.getElementById('i48').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[3][8]=2;
 				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
@@ -2788,6 +2884,7 @@
 			document.getElementById('s7').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i49').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[4][6]=1;
 				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
@@ -2795,6 +2892,7 @@
 				}
 			}else{
 				document.getElementById('i49').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[4][6]=2;
 				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
@@ -2840,6 +2938,7 @@
 			document.getElementById('s8').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i50').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[4][7]=1;
 				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
@@ -2847,6 +2946,7 @@
 				}
 			}else{
 				document.getElementById('i50').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[4][7]=2;
 				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
@@ -2893,6 +2993,7 @@
 			document.getElementById('s9').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i51').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[4][8]=1;
 				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
@@ -2900,6 +3001,7 @@
 				}
 			}else{
 				document.getElementById('i51').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[4][8]=2;
 				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
@@ -2946,6 +3048,7 @@
 			document.getElementById('s7').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i52').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[5][6]=1;
 				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
@@ -2953,6 +3056,7 @@
 				}
 			}else{
 				document.getElementById('i52').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[5][6]=2;
 				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
@@ -2999,6 +3103,7 @@
 			document.getElementById('s8').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i53').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[5][7]=1;
 				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
@@ -3006,6 +3111,7 @@
 				}
 			}else{
 				document.getElementById('i53').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[5][7]=2;
 				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
@@ -3052,6 +3158,7 @@
 			document.getElementById('s9').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i54').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[5][8]=1;
 				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
@@ -3059,6 +3166,7 @@
 				}
 			}else{
 				document.getElementById('i54').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[5][8]=2;
 				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
@@ -3105,6 +3213,7 @@
 			document.getElementById('s1').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i55').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[6][0]=1;
 				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
@@ -3112,6 +3221,7 @@
 				}
 			}else{
 				document.getElementById('i55').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[6][0]=2;
 				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
@@ -3157,6 +3267,7 @@
 			document.getElementById('s2').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i56').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[6][1]=1;
 				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
@@ -3164,6 +3275,7 @@
 				}
 			}else{
 				document.getElementById('i56').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[6][1]=2;
 				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
@@ -3209,6 +3321,7 @@
 			document.getElementById('s3').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i57').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[6][2]=1;
 				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
@@ -3216,6 +3329,7 @@
 				}
 			}else{
 				document.getElementById('i57').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[6][2]=2;
 				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
@@ -3261,6 +3375,7 @@
 			document.getElementById('s1').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i58').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[7][0]=1;
 				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
@@ -3268,6 +3383,7 @@
 				}
 			}else{
 				document.getElementById('i58').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[7][0]=2;
 				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
@@ -3313,6 +3429,7 @@
 			document.getElementById('s2').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i59').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[7][1]=1;
 				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
@@ -3320,6 +3437,7 @@
 				}
 			}else{
 				document.getElementById('i59').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[7][1]=2;
 				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
@@ -3365,6 +3483,7 @@
 			document.getElementById('s3').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i60').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[7][2]=1;
 				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
@@ -3372,6 +3491,7 @@
 				}
 			}else{
 				document.getElementById('i60').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[7][2]=2;
 				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
@@ -3417,6 +3537,7 @@
 			document.getElementById('s1').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i61').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[8][0]=1;
 				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
@@ -3424,6 +3545,7 @@
 				}
 			}else{
 				document.getElementById('i61').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[8][0]=2;
 				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
@@ -3469,6 +3591,7 @@
 			document.getElementById('s2').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i62').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[8][1]=1;
 				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
@@ -3476,6 +3599,7 @@
 				}
 			}else{
 				document.getElementById('i62').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[8][1]=2;
 				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
@@ -3521,6 +3645,7 @@
 			document.getElementById('s3').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i63').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[8][2]=1;
 				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
@@ -3528,6 +3653,7 @@
 				}
 			}else{
 				document.getElementById('i63').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[8][2]=2;
 				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
@@ -3573,6 +3699,7 @@
 			document.getElementById('s4').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i64').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[6][3]=1;
 				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
@@ -3580,6 +3707,7 @@
 				}
 			}else{
 				document.getElementById('i64').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[6][3]=2;
 				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
@@ -3625,6 +3753,7 @@
 			document.getElementById('s5').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i65').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[6][4]=1;
 				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
@@ -3632,6 +3761,7 @@
 				}
 			}else{
 				document.getElementById('i65').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[6][4]=2;
 				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
@@ -3677,6 +3807,7 @@
 			document.getElementById('s6').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i66').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[6][5]=1;
 				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
@@ -3684,6 +3815,7 @@
 				}
 			}else{
 				document.getElementById('i66').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[6][5]=2;
 				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
@@ -3729,6 +3861,7 @@
 			document.getElementById('s4').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i67').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[7][3]=1;
 				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
@@ -3736,6 +3869,7 @@
 				}
 			}else{
 				document.getElementById('i67').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[7][3]=2;
 				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
@@ -3781,6 +3915,7 @@
 			document.getElementById('s5').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i68').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[7][4]=1;
 				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
@@ -3788,6 +3923,7 @@
 				}
 			}else{
 				document.getElementById('i68').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[7][4]=2;
 				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
@@ -3833,6 +3969,7 @@
 			document.getElementById('s6').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i69').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[7][5]=1;
 				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
@@ -3840,6 +3977,7 @@
 				}
 			}else{
 				document.getElementById('i69').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[7][5]=2;
 				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
@@ -3885,6 +4023,7 @@
 			document.getElementById('s4').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i70').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[8][3]=1;
 				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
@@ -3892,6 +4031,7 @@
 				}
 			}else{
 				document.getElementById('i70').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[8][3]=2;
 				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
@@ -3937,6 +4077,7 @@
 			document.getElementById('s5').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i71').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[8][4]=1;
 				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
@@ -3944,6 +4085,7 @@
 				}
 			}else{
 				document.getElementById('i71').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[8][4]=2;
 				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
@@ -3989,6 +4131,7 @@
 			document.getElementById('s6').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i72').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[8][5]=1;
 				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
@@ -3996,6 +4139,7 @@
 				}
 			}else{
 				document.getElementById('i72').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[8][5]=2;
 				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
@@ -4041,6 +4185,7 @@
 			document.getElementById('s7').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i73').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[6][6]=1;
 				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
@@ -4048,6 +4193,7 @@
 				}
 			}else{
 				document.getElementById('i73').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[6][6]=2;
 				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
@@ -4093,6 +4239,7 @@
 			document.getElementById('s8').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i74').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[6][7]=1;
 				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
@@ -4100,6 +4247,7 @@
 				}
 			}else{
 				document.getElementById('i74').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[6][7]=2;
 				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
@@ -4145,6 +4293,7 @@
 			document.getElementById('s9').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i75').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[6][8]=1;
 				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
@@ -4152,6 +4301,7 @@
 				}
 			}else{
 				document.getElementById('i75').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[6][8]=2;
 				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
@@ -4197,6 +4347,7 @@
 			document.getElementById('s7').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i76').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[7][6]=1;
 				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
@@ -4204,6 +4355,7 @@
 				}
 			}else{
 				document.getElementById('i76').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[7][6]=2;
 				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
@@ -4249,6 +4401,7 @@
 			document.getElementById('s8').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i77').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[7][7]=1;
 				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
@@ -4256,6 +4409,7 @@
 				}
 			}else{
 				document.getElementById('i77').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[7][7]=2;
 				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
@@ -4301,6 +4455,7 @@
 			document.getElementById('s9').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i78').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[7][8]=1;
 				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
@@ -4308,6 +4463,7 @@
 				}
 			}else{
 				document.getElementById('i78').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[7][8]=2;
 				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
@@ -4353,6 +4509,7 @@
 			document.getElementById('s7').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i79').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[8][6]=1;
 				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
@@ -4360,6 +4517,7 @@
 				}
 			}else{
 				document.getElementById('i79').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[8][6]=2;
 				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
@@ -4405,6 +4563,7 @@
 			document.getElementById('s8').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i80').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[8][7]=1;
 				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
@@ -4412,6 +4571,7 @@
 				}
 			}else{
 				document.getElementById('i80').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[8][7]=2;
 				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
@@ -4457,6 +4617,7 @@
 			document.getElementById('s9').src="square.PNG";
 			if(turn==1){
 				document.getElementById('i81').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
 				turn=2;
 				bigGameBoard[8][8]=1;
 				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
@@ -4464,6 +4625,7 @@
 				}
 			}else{
 				document.getElementById('i81').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
 				turn=1;
 				bigGameBoard[8][8]=2;
 				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
