@@ -281,14 +281,13 @@ function computePlay(){
   gameDict.sort(function(first,second){
 	  return second[1]-first[1];
   });
- for (z=0;z<9;z++){
-	 console.log(gameDict[z]);
- }
+ 
   
   for (k=0;k<9;k++){
     if (bools[k]){
 	for (y=0;y<9;y++){
 		var index=gameDict[y][0];
+		console.log(index);
 		document.getElementById('b'+squareMap[k][index]).click();
 	}
      
