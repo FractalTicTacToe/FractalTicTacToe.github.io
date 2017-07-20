@@ -283,12 +283,11 @@ function computePlay(){
   });
   for (k=0;k<9;k++){
     if (bools[k]){
-      while(turn==2){
-	      var y=0;
-	      var index=gameDict[y][0];
-	       document.getElementById('b'+squareMap[k][index]).click();
-	      y++;
-      }
+	for (y=0;y<9;y++){
+		var index=gameDict[y][0];
+		document.getElementById('b'+squareMap[k][index]).click();
+	}
+     
     }
   }
 }
