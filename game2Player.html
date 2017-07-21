@@ -70,6 +70,18 @@
 	<img id="s8" src="blank.PNG" style="width:200px;height:180px;top:355px;position:absolute;left:205px">
 	<img id="s9" src="blank.PNG" style="width:200px;height:180px;top:355px;position:absolute;left:400px">
 	</div>
+	   <div class="game" style="z-index:6;">
+	<!squares>
+	<img id="w1" src="blank.PNG" style="width:200px;height:180px;top:30px;position:absolute;left:10px;filter:invert(100%);opacity:0.2">
+	<img id="w2" src="blank.PNG" style="width:200px;height:180px;top:30px;position:absolute;left:205px;filter:invert(100%);opacity:0.2">
+	<img id="w3" src="blank.PNG" style="width:200px;height:180px;top:30px;position:absolute;left:400px;filter:invert(100%);opacity:0.2">
+	<img id="w4" src="blank.PNG" style="width:200px;height:180px;top:195px;position:absolute;left:10px;filter:invert(100%);opacity:0.2">
+	<img id="w5" src="blank.PNG" style="width:200px;height:180px;top:195px;position:absolute;left:205px;filter:invert(100%);opacity:0.2">
+	<img id="w6" src="blank.PNG" style="width:200px;height:180px;top:195px;position:absolute;left:400px;filter:invert(100%);opacity:0.2">
+	<img id="w7" src="blank.PNG" style="width:200px;height:180px;top:355px;position:absolute;left:10px;filter:invert(100%);opacity:0.2">
+	<img id="w8" src="blank.PNG" style="width:200px;height:180px;top:355px;position:absolute;left:205px;filter:invert(100%);opacity:0.2">
+	<img id="w9" src="blank.PNG" style="width:200px;height:180px;top:355px;position:absolute;left:400px;filter:invert(100%);opacity:0.2">
+	</div>
 	<div class="game" style="z-index:20;">
 	<!buttons>
 	<button id="b1" class="gameBut" style="width:45px;height:45px;top:45px;left:28px;position:absolute"></button>
@@ -279,7 +291,7 @@
 				turn=2;
 				bigGameBoard[0][0]=1;
 				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
-					smallGameBoard[0]=1;
+					smallGameBoard[0]=1;document.getElementById('w1').src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i1').src="oh.PNG";
@@ -287,7 +299,7 @@
 				turn=1;
 				bigGameBoard[0][0]=2;
 				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
-					smallGameBoard[0]=2;
+					smallGameBoard[0]=2;document.getElementById("w1").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -335,7 +347,7 @@
 				turn=2;
 				bigGameBoard[0][1]=1;
 				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
-					smallGameBoard[0]=1;
+					smallGameBoard[0]=1;document.getElementById('w1').src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i2').src="oh.PNG";
@@ -343,7 +355,7 @@
 				turn=1;
 				bigGameBoard[0][1]=2;
 				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
-					smallGameBoard[0]=2;
+					smallGameBoard[0]=2;document.getElementById("w1").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -390,7 +402,7 @@
 				turn=2;
 				bigGameBoard[0][2]=1;
 				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
-					smallGameBoard[0]=1;
+					smallGameBoard[0]=1;document.getElementById('w1').src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i3').src="oh.PNG";
@@ -398,7 +410,7 @@
 				turn=1;
 				bigGameBoard[0][2]=2;
 				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
-					smallGameBoard[0]=2;
+					smallGameBoard[0]=2;document.getElementById("w1").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -446,7 +458,7 @@
 				turn=2;
 				bigGameBoard[1][0]=1;
 				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
-					smallGameBoard[1]=1;
+					smallGameBoard[1]=1;document.getElementById("w2").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i4').src="oh.PNG";
@@ -454,7 +466,7 @@
 				turn=1;
 				bigGameBoard[1][0]=2;
 				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
-					smallGameBoard[1]=2;
+					smallGameBoard[1]=2;document.getElementById("w2").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -501,7 +513,7 @@
 				turn=2;
 				bigGameBoard[1][1]=1;
 				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
-					smallGameBoard[1]=1;
+					smallGameBoard[1]=1;document.getElementById("w2").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i5').src="oh.PNG";
@@ -509,7 +521,7 @@
 				turn=1;
 				bigGameBoard[1][1]=2;
 				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
-					smallGameBoard[1]=2;
+					smallGameBoard[1]=2;document.getElementById("w2").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -556,7 +568,7 @@
 				turn=2;
 				bigGameBoard[1][2]=1;
 				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
-					smallGameBoard[1]=1;
+					smallGameBoard[1]=1;document.getElementById("w2").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i6').src="oh.PNG";
@@ -564,7 +576,7 @@
 				turn=1;
 				bigGameBoard[1][2]=2;
 				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
-					smallGameBoard[1]=2;
+					smallGameBoard[1]=2;document.getElementById("w2").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -611,7 +623,7 @@
 				turn=2;
 				bigGameBoard[2][0]=1;
 				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
-					smallGameBoard[2]=1;
+					smallGameBoard[2]=1;document.getElementById("w3").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i7').src="oh.PNG";
@@ -619,7 +631,7 @@
 				turn=1;
 				bigGameBoard[2][0]=2;
 				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
-					smallGameBoard[2]=2;
+					smallGameBoard[2]=2;document.getElementById("w3").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -666,7 +678,7 @@
 				turn=2;
 				bigGameBoard[2][1]=1;
 				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
-					smallGameBoard[2]=1;
+					smallGameBoard[2]=1;document.getElementById("w3").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i8').src="oh.PNG";
@@ -674,7 +686,7 @@
 				turn=1;
 				bigGameBoard[2][1]=2;
 				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
-					smallGameBoard[2]=2;
+					smallGameBoard[2]=2;document.getElementById("w3").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -721,7 +733,7 @@
 				turn=2;
 				bigGameBoard[2][2]=1;
 				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
-					smallGameBoard[2]=1;
+					smallGameBoard[2]=1;document.getElementById("w3").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i9').src="oh.PNG";
@@ -729,7 +741,7 @@
 				turn=1;
 				bigGameBoard[2][2]=2;
 				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
-					smallGameBoard[2]=2;
+					smallGameBoard[2]=2;document.getElementById("w3").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -776,7 +788,7 @@
 				turn=2;
 				bigGameBoard[0][3]=1;
 				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
-					smallGameBoard[0]=1;
+					smallGameBoard[0]=1;document.getElementById('w1').src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i10').src="oh.PNG";
@@ -784,7 +796,7 @@
 				turn=1;
 				bigGameBoard[0][3]=2;
 				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
-					smallGameBoard[0]=2;
+					smallGameBoard[0]=2;document.getElementById("w1").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -831,7 +843,7 @@
 				turn=2;
 				bigGameBoard[0][4]=1;
 				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
-					smallGameBoard[0]=1;
+					smallGameBoard[0]=1;document.getElementById('w1').src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i11').src="oh.PNG";
@@ -839,7 +851,7 @@
 				turn=1;
 				bigGameBoard[0][4]=2;
 				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
-					smallGameBoard[0]=2;
+					smallGameBoard[0]=2;document.getElementById("w1").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -886,7 +898,7 @@
 				turn=2;
 				bigGameBoard[0][5]=1;
 				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
-					smallGameBoard[0]=1;
+					smallGameBoard[0]=1;document.getElementById('w1').src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i12').src="oh.PNG";
@@ -894,7 +906,7 @@
 				turn=1;
 				bigGameBoard[0][5]=2;
 				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
-					smallGameBoard[0]=2;
+					smallGameBoard[0]=2;document.getElementById("w1").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -941,7 +953,7 @@
 				turn=2;
 				bigGameBoard[1][3]=1;
 				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
-					smallGameBoard[1]=1;
+					smallGameBoard[1]=1;document.getElementById("w2").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i13').src="oh.PNG";
@@ -949,7 +961,7 @@
 				turn=1;
 				bigGameBoard[1][3]=2;
 				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
-					smallGameBoard[1]=2;
+					smallGameBoard[1]=2;document.getElementById("w2").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -997,7 +1009,7 @@
 				turn=2;
 				bigGameBoard[1][4]=1;
 				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
-					smallGameBoard[1]=1;
+					smallGameBoard[1]=1;document.getElementById("w2").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i14').src="oh.PNG";
@@ -1005,7 +1017,7 @@
 				turn=1;
 				bigGameBoard[1][4]=2;
 				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
-					smallGameBoard[1]=2;
+					smallGameBoard[1]=2;document.getElementById("w2").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -1053,7 +1065,7 @@
 				turn=2;
 				bigGameBoard[1][5]=1;
 				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
-					smallGameBoard[1]=1;
+					smallGameBoard[1]=1;document.getElementById("w2").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i15').src="oh.PNG";
@@ -1061,7 +1073,7 @@
 				turn=1;
 				bigGameBoard[1][5]=2;
 				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
-					smallGameBoard[1]=2;
+					smallGameBoard[1]=2;document.getElementById("w2").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -1108,7 +1120,7 @@
 				turn=2;
 				bigGameBoard[2][3]=1;
 				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
-					smallGameBoard[2]=1;
+					smallGameBoard[2]=1;document.getElementById("w3").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i16').src="oh.PNG";
@@ -1116,7 +1128,7 @@
 				turn=1;
 				bigGameBoard[2][3]=2;
 				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
-					smallGameBoard[2]=2;
+					smallGameBoard[2]=2;document.getElementById("w3").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -1163,7 +1175,7 @@
 				turn=2;
 				bigGameBoard[2][4]=1;
 				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
-					smallGameBoard[2]=1;
+					smallGameBoard[2]=1;document.getElementById("w3").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i17').src="oh.PNG";
@@ -1171,7 +1183,7 @@
 				turn=1;
 				bigGameBoard[2][4]=2;
 				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
-					smallGameBoard[2]=2;
+					smallGameBoard[2]=2;document.getElementById("w3").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -1218,7 +1230,7 @@
 				turn=2;
 				bigGameBoard[2][5]=1;
 				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
-					smallGameBoard[2]=1;
+					smallGameBoard[2]=1;document.getElementById("w3").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i18').src="oh.PNG";
@@ -1226,7 +1238,7 @@
 				turn=1;
 				bigGameBoard[2][5]=2;
 				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
-					smallGameBoard[2]=2;
+					smallGameBoard[2]=2;document.getElementById("w3").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -1273,7 +1285,7 @@
 				turn=2;
 				bigGameBoard[0][6]=1;
 				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
-					smallGameBoard[0]=1;
+					smallGameBoard[0]=1;document.getElementById('w1').src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i19').src="oh.PNG";
@@ -1281,7 +1293,7 @@
 				turn=1;
 				bigGameBoard[0][6]=2;
 				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
-					smallGameBoard[0]=2;
+					smallGameBoard[0]=2;document.getElementById("w1").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -1328,7 +1340,7 @@
 				turn=2;
 				bigGameBoard[0][7]=1;
 				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
-					smallGameBoard[0]=1;
+					smallGameBoard[0]=1;document.getElementById('w1').src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i20').src="oh.PNG";
@@ -1336,7 +1348,7 @@
 				turn=1;
 				bigGameBoard[0][7]=2;
 				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
-					smallGameBoard[0]=2;
+					smallGameBoard[0]=2;document.getElementById("w1").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -1383,7 +1395,7 @@
 				turn=2;
 				bigGameBoard[0][8]=1;
 				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
-					smallGameBoard[0]=1;
+					smallGameBoard[0]=1;document.getElementById('w1').src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i21').src="oh.PNG";
@@ -1391,7 +1403,7 @@
 				turn=1;
 				bigGameBoard[0][8]=2;
 				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
-					smallGameBoard[0]=2;
+					smallGameBoard[0]=2;document.getElementById("w1").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -1438,7 +1450,7 @@
 				turn=2;
 				bigGameBoard[1][6]=1;
 				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
-					smallGameBoard[1]=1;
+					smallGameBoard[1]=1;document.getElementById("w2").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i22').src="oh.PNG";
@@ -1446,7 +1458,7 @@
 				turn=1;
 				bigGameBoard[1][6]=2;
 				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
-					smallGameBoard[1]=2;
+					smallGameBoard[1]=2;document.getElementById("w2").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -1493,7 +1505,7 @@
 				turn=2;
 				bigGameBoard[1][7]=1;
 				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
-					smallGameBoard[1]=1;
+					smallGameBoard[1]=1;document.getElementById("w2").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i23').src="oh.PNG";
@@ -1501,7 +1513,7 @@
 				turn=1;
 				bigGameBoard[1][7]=2;
 				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
-					smallGameBoard[1]=2;
+					smallGameBoard[1]=2;document.getElementById("w2").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -1548,7 +1560,7 @@
 				turn=2;
 				bigGameBoard[1][8]=1;
 				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
-					smallGameBoard[1]=1;
+					smallGameBoard[1]=1;document.getElementById("w2").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i24').src="oh.PNG";
@@ -1556,7 +1568,7 @@
 				turn=1;
 				bigGameBoard[1][8]=2;
 				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
-					smallGameBoard[1]=2;
+					smallGameBoard[1]=2;document.getElementById("w2").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -1603,7 +1615,7 @@
 				turn=2;
 				bigGameBoard[2][6]=1;
 				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
-					smallGameBoard[2]=1;
+					smallGameBoard[2]=1;document.getElementById("w3").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i25').src="oh.PNG";
@@ -1611,7 +1623,7 @@
 				turn=1;
 				bigGameBoard[2][6]=2;
 				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
-					smallGameBoard[2]=2;
+					smallGameBoard[2]=2;document.getElementById("w3").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -1658,7 +1670,7 @@
 				turn=2;
 				bigGameBoard[2][7]=1;
 				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
-					smallGameBoard[2]=1;
+					smallGameBoard[2]=1;document.getElementById("w3").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i26').src="oh.PNG";
@@ -1666,7 +1678,7 @@
 				turn=1;
 				bigGameBoard[2][7]=2;
 				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
-					smallGameBoard[2]=2;
+					smallGameBoard[2]=2;document.getElementById("w3").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -1713,7 +1725,7 @@
 				turn=2;
 				bigGameBoard[2][8]=1;
 				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
-					smallGameBoard[2]=1;
+					smallGameBoard[2]=1;document.getElementById("w3").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i27').src="oh.PNG";
@@ -1721,7 +1733,7 @@
 				turn=1;
 				bigGameBoard[2][8]=2;
 				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
-					smallGameBoard[2]=2;
+					smallGameBoard[2]=2;document.getElementById("w3").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -1769,7 +1781,7 @@
 				turn=2;
 				bigGameBoard[3][0]=1;
 				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
-					smallGameBoard[3]=1;
+					smallGameBoard[3]=1;document.getElementById("w4").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i28').src="oh.PNG";
@@ -1777,7 +1789,7 @@
 				turn=1;
 				bigGameBoard[3][0]=2;
 				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
-					smallGameBoard[3]=2;
+					smallGameBoard[3]=2;document.getElementById("w4").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -1825,7 +1837,7 @@
 				turn=2;
 				bigGameBoard[3][1]=1;
 				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
-					smallGameBoard[3]=1;
+					smallGameBoard[3]=1;document.getElementById("w4").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i29').src="oh.PNG";
@@ -1833,7 +1845,7 @@
 				turn=1;
 				bigGameBoard[3][1]=2;
 				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
-					smallGameBoard[3]=2;
+					smallGameBoard[3]=2;document.getElementById("w4").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -1881,7 +1893,7 @@
 				turn=2;
 				bigGameBoard[3][2]=1;
 				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
-					smallGameBoard[3]=1;
+					smallGameBoard[3]=1;document.getElementById("w4").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i30').src="oh.PNG";
@@ -1889,7 +1901,7 @@
 				turn=1;
 				bigGameBoard[3][2]=2;
 				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
-					smallGameBoard[3]=2;
+					smallGameBoard[3]=2;document.getElementById("w4").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -1937,7 +1949,7 @@
 				turn=2;
 				bigGameBoard[4][0]=1;
 				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
-					smallGameBoard[4]=1;
+					smallGameBoard[4]=1;document.getElementById("w5").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i31').src="oh.PNG";
@@ -1945,7 +1957,7 @@
 				turn=1;
 				bigGameBoard[4][0]=2;
 				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
-					smallGameBoard[4]=2;
+					smallGameBoard[4]=2;document.getElementById("w5").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -1992,7 +2004,7 @@
 				turn=2;
 				bigGameBoard[4][1]=1;
 				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
-					smallGameBoard[4]=1;
+					smallGameBoard[4]=1;document.getElementById("w5").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i32').src="oh.PNG";
@@ -2000,7 +2012,7 @@
 				turn=1;
 				bigGameBoard[4][1]=2;
 				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
-					smallGameBoard[4]=2;
+					smallGameBoard[4]=2;document.getElementById("w5").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -2049,7 +2061,7 @@
 				turn=2;
 				bigGameBoard[4][2]=1;
 				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
-					smallGameBoard[4]=1;
+					smallGameBoard[4]=1;document.getElementById("w5").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i33').src="oh.PNG";
@@ -2057,7 +2069,7 @@
 				turn=1;
 				bigGameBoard[4][2]=2;
 				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
-					smallGameBoard[4]=2;
+					smallGameBoard[4]=2;document.getElementById("w5").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -2105,7 +2117,7 @@
 				turn=2;
 				bigGameBoard[5][0]=1;
 				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
-					smallGameBoard[5]=1;
+					smallGameBoard[5]=1;document.getElementById('w6').src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i34').src="oh.PNG";
@@ -2113,7 +2125,7 @@
 				turn=1;
 				bigGameBoard[5][0]=2;
 				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
-					smallGameBoard[5]=2;
+					smallGameBoard[5]=2;document.getElementById('w6').src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -2162,7 +2174,7 @@
 				turn=2;
 				bigGameBoard[5][1]=1;
 				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
-					smallGameBoard[5]=1;
+					smallGameBoard[5]=1;document.getElementById('w6').src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i35').src="oh.PNG";
@@ -2170,7 +2182,7 @@
 				turn=1;
 				bigGameBoard[5][1]=2;
 				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
-					smallGameBoard[5]=2;
+					smallGameBoard[5]=2;document.getElementById('w6').src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -2218,7 +2230,7 @@
 				turn=2;
 				bigGameBoard[5][2]=1;
 				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
-					smallGameBoard[5]=1;
+					smallGameBoard[5]=1;document.getElementById('w6').src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i36').src="oh.PNG";
@@ -2226,7 +2238,7 @@
 				turn=1;
 				bigGameBoard[5][2]=2;
 				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
-					smallGameBoard[5]=2;
+					smallGameBoard[5]=2;document.getElementById('w6').src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -2273,7 +2285,7 @@
 				turn=2;
 				bigGameBoard[3][3]=1;
 				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
-					smallGameBoard[3]=1;
+					smallGameBoard[3]=1;document.getElementById("w4").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i37').src="oh.PNG";
@@ -2281,7 +2293,7 @@
 				turn=1;
 				bigGameBoard[3][3]=2;
 				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
-					smallGameBoard[3]=2;
+					smallGameBoard[3]=2;document.getElementById("w4").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -2330,7 +2342,7 @@
 				turn=2;
 				bigGameBoard[3][4]=1;
 				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
-					smallGameBoard[3]=1;
+					smallGameBoard[3]=1;document.getElementById("w4").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i38').src="oh.PNG";
@@ -2338,7 +2350,7 @@
 				turn=1;
 				bigGameBoard[3][4]=2;
 				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
-					smallGameBoard[3]=2;
+					smallGameBoard[3]=2;document.getElementById("w4").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -2386,7 +2398,7 @@
 				turn=2;
 				bigGameBoard[3][5]=1;
 				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
-					smallGameBoard[3]=1;
+					smallGameBoard[3]=1;document.getElementById("w4").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i39').src="oh.PNG";
@@ -2394,7 +2406,7 @@
 				turn=1;
 				bigGameBoard[3][5]=2;
 				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
-					smallGameBoard[3]=2;
+					smallGameBoard[3]=2;document.getElementById("w4").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -2441,7 +2453,7 @@
 				turn=2;
 				bigGameBoard[4][3]=1;
 				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
-					smallGameBoard[4]=1;
+					smallGameBoard[4]=1;document.getElementById("w5").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i40').src="oh.PNG";
@@ -2449,7 +2461,7 @@
 				turn=1;
 				bigGameBoard[4][3]=2;
 				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
-					smallGameBoard[4]=2;
+					smallGameBoard[4]=2;document.getElementById("w5").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -2496,7 +2508,7 @@
 				turn=2;
 				bigGameBoard[4][4]=1;
 				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
-					smallGameBoard[4]=1;
+					smallGameBoard[4]=1;document.getElementById("w5").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i41').src="oh.PNG";
@@ -2504,7 +2516,7 @@
 				turn=1;
 				bigGameBoard[4][4]=2;
 				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
-					smallGameBoard[4]=2;
+					smallGameBoard[4]=2;document.getElementById("w5").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -2551,7 +2563,7 @@
 				turn=2;
 				bigGameBoard[4][5]=1;
 				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
-					smallGameBoard[4]=1;
+					smallGameBoard[4]=1;document.getElementById("w5").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i42').src="oh.PNG";
@@ -2559,7 +2571,7 @@
 				turn=1;
 				bigGameBoard[4][5]=2;
 				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
-					smallGameBoard[4]=2;
+					smallGameBoard[4]=2;document.getElementById("w5").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -2606,7 +2618,7 @@
 				turn=2;
 				bigGameBoard[5][3]=1;
 				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
-					smallGameBoard[5]=1;
+					smallGameBoard[5]=1;document.getElementById('w6').src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i43').src="oh.PNG";
@@ -2614,7 +2626,7 @@
 				turn=1;
 				bigGameBoard[5][3]=2;
 				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
-					smallGameBoard[5]=2;
+					smallGameBoard[5]=2;document.getElementById('w6').src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -2661,7 +2673,7 @@
 				turn=2;
 				bigGameBoard[5][4]=1;
 				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
-					smallGameBoard[5]=1;
+					smallGameBoard[5]=1;document.getElementById('w6').src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i44').src="oh.PNG";
@@ -2669,7 +2681,7 @@
 				turn=1;
 				bigGameBoard[5][4]=2;
 				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
-					smallGameBoard[5]=2;
+					smallGameBoard[5]=2;document.getElementById('w6').src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -2716,7 +2728,7 @@
 				turn=2;
 				bigGameBoard[5][5]=1;
 				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
-					smallGameBoard[5]=1;
+					smallGameBoard[5]=1;document.getElementById('w6').src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i45').src="oh.PNG";
@@ -2724,7 +2736,7 @@
 				turn=1;
 				bigGameBoard[5][5]=2;
 				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
-					smallGameBoard[5]=2;
+					smallGameBoard[5]=2;document.getElementById('w6').src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -2772,7 +2784,7 @@
 				turn=2;
 				bigGameBoard[3][6]=1;
 				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
-					smallGameBoard[3]=1;
+					smallGameBoard[3]=1;document.getElementById("w4").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i46').src="oh.PNG";
@@ -2780,7 +2792,7 @@
 				turn=1;
 				bigGameBoard[3][6]=2;
 				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
-					smallGameBoard[3]=2;
+					smallGameBoard[3]=2;document.getElementById("w4").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -2827,7 +2839,7 @@
 				turn=2;
 				bigGameBoard[3][7]=1;
 				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
-					smallGameBoard[3]=1;
+					smallGameBoard[3]=1;document.getElementById("w4").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i47').src="oh.PNG";
@@ -2835,7 +2847,7 @@
 				turn=1;
 				bigGameBoard[3][7]=2;
 				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
-					smallGameBoard[3]=2;
+					smallGameBoard[3]=2;document.getElementById("w4").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -2882,7 +2894,7 @@
 				turn=2;
 				bigGameBoard[3][8]=1;
 				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
-					smallGameBoard[3]=1;
+					smallGameBoard[3]=1;document.getElementById("w4").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i48').src="oh.PNG";
@@ -2890,7 +2902,7 @@
 				turn=1;
 				bigGameBoard[3][8]=2;
 				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
-					smallGameBoard[3]=2;
+					smallGameBoard[3]=2;document.getElementById("w4").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -2937,7 +2949,7 @@
 				turn=2;
 				bigGameBoard[4][6]=1;
 				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
-					smallGameBoard[4]=1;
+					smallGameBoard[4]=1;document.getElementById("w5").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i49').src="oh.PNG";
@@ -2945,7 +2957,7 @@
 				turn=1;
 				bigGameBoard[4][6]=2;
 				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
-					smallGameBoard[4]=2;
+					smallGameBoard[4]=2;document.getElementById("w5").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -2992,7 +3004,7 @@
 				turn=2;
 				bigGameBoard[4][7]=1;
 				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
-					smallGameBoard[4]=1;
+					smallGameBoard[4]=1;document.getElementById("w5").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i50').src="oh.PNG";
@@ -3000,7 +3012,7 @@
 				turn=1;
 				bigGameBoard[4][7]=2;
 				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
-					smallGameBoard[4]=2;
+					smallGameBoard[4]=2;document.getElementById("w5").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -3048,7 +3060,7 @@
 				turn=2;
 				bigGameBoard[4][8]=1;
 				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
-					smallGameBoard[4]=1;
+					smallGameBoard[4]=1;document.getElementById("w5").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i51').src="oh.PNG";
@@ -3056,7 +3068,7 @@
 				turn=1;
 				bigGameBoard[4][8]=2;
 				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
-					smallGameBoard[4]=2;
+					smallGameBoard[4]=2;document.getElementById("w5").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -3104,7 +3116,7 @@
 				turn=2;
 				bigGameBoard[5][6]=1;
 				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
-					smallGameBoard[5]=1;
+					smallGameBoard[5]=1;document.getElementById('w6').src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i52').src="oh.PNG";
@@ -3112,7 +3124,7 @@
 				turn=1;
 				bigGameBoard[5][6]=2;
 				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
-					smallGameBoard[5]=2;
+					smallGameBoard[5]=2;document.getElementById('w6').src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -3160,7 +3172,7 @@
 				turn=2;
 				bigGameBoard[5][7]=1;
 				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
-					smallGameBoard[5]=1;
+					smallGameBoard[5]=1;document.getElementById('w6').src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i53').src="oh.PNG";
@@ -3168,7 +3180,7 @@
 				turn=1;
 				bigGameBoard[5][7]=2;
 				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
-					smallGameBoard[5]=2;
+					smallGameBoard[5]=2;document.getElementById('w6').src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -3216,7 +3228,7 @@
 				turn=2;
 				bigGameBoard[5][8]=1;
 				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
-					smallGameBoard[5]=1;
+					smallGameBoard[5]=1;document.getElementById('w6').src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i54').src="oh.PNG";
@@ -3224,7 +3236,7 @@
 				turn=1;
 				bigGameBoard[5][8]=2;
 				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
-					smallGameBoard[5]=2;
+					smallGameBoard[5]=2;document.getElementById('w6').src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -3272,7 +3284,7 @@
 				turn=2;
 				bigGameBoard[6][0]=1;
 				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
-					smallGameBoard[6]=1;
+					smallGameBoard[6]=1;document.getElementById("w7").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i55').src="oh.PNG";
@@ -3280,7 +3292,7 @@
 				turn=1;
 				bigGameBoard[6][0]=2;
 				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
-					smallGameBoard[6]=2;
+					smallGameBoard[6]=2;document.getElementById("w7").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -3327,7 +3339,7 @@
 				turn=2;
 				bigGameBoard[6][1]=1;
 				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
-					smallGameBoard[6]=1;
+					smallGameBoard[6]=1;document.getElementById("w7").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i56').src="oh.PNG";
@@ -3335,7 +3347,7 @@
 				turn=1;
 				bigGameBoard[6][1]=2;
 				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
-					smallGameBoard[6]=2;
+					smallGameBoard[6]=2;document.getElementById("w7").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -3382,7 +3394,7 @@
 				turn=2;
 				bigGameBoard[6][2]=1;
 				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
-					smallGameBoard[6]=1;
+					smallGameBoard[6]=1;document.getElementById("w7").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i57').src="oh.PNG";
@@ -3390,7 +3402,7 @@
 				turn=1;
 				bigGameBoard[6][2]=2;
 				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
-					smallGameBoard[6]=2;
+					smallGameBoard[6]=2;document.getElementById("w7").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -3437,7 +3449,7 @@
 				turn=2;
 				bigGameBoard[7][0]=1;
 				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
-					smallGameBoard[7]=1;
+					smallGameBoard[7]=1;document.getElementById("w8").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i58').src="oh.PNG";
@@ -3445,7 +3457,7 @@
 				turn=1;
 				bigGameBoard[7][0]=2;
 				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
-					smallGameBoard[7]=2;
+					smallGameBoard[7]=2;document.getElementById("w8").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -3492,7 +3504,7 @@
 				turn=2;
 				bigGameBoard[7][1]=1;
 				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
-					smallGameBoard[7]=1;
+					smallGameBoard[7]=1;document.getElementById("w8").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i59').src="oh.PNG";
@@ -3500,7 +3512,7 @@
 				turn=1;
 				bigGameBoard[7][1]=2;
 				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
-					smallGameBoard[7]=2;
+					smallGameBoard[7]=2;document.getElementById("w8").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -3547,7 +3559,7 @@
 				turn=2;
 				bigGameBoard[7][2]=1;
 				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
-					smallGameBoard[7]=1;
+					smallGameBoard[7]=1;document.getElementById("w8").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i60').src="oh.PNG";
@@ -3555,7 +3567,7 @@
 				turn=1;
 				bigGameBoard[7][2]=2;
 				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
-					smallGameBoard[7]=2;
+					smallGameBoard[7]=2;document.getElementById("w8").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -3602,7 +3614,7 @@
 				turn=2;
 				bigGameBoard[8][0]=1;
 				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
-					smallGameBoard[8]=1;
+					smallGameBoard[8]=1;document.getElementById("w9").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i61').src="oh.PNG";
@@ -3610,7 +3622,7 @@
 				turn=1;
 				bigGameBoard[8][0]=2;
 				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
-					smallGameBoard[8]=2;
+					smallGameBoard[8]=2;document.getElementById("w9").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -3657,7 +3669,7 @@
 				turn=2;
 				bigGameBoard[8][1]=1;
 				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
-					smallGameBoard[8]=1;
+					smallGameBoard[8]=1;document.getElementById("w9").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i62').src="oh.PNG";
@@ -3665,7 +3677,7 @@
 				turn=1;
 				bigGameBoard[8][1]=2;
 				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
-					smallGameBoard[8]=2;
+					smallGameBoard[8]=2;document.getElementById("w9").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -3712,7 +3724,7 @@
 				turn=2;
 				bigGameBoard[8][2]=1;
 				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
-					smallGameBoard[8]=1;
+					smallGameBoard[8]=1;document.getElementById("w9").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i63').src="oh.PNG";
@@ -3720,7 +3732,7 @@
 				turn=1;
 				bigGameBoard[8][2]=2;
 				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
-					smallGameBoard[8]=2;
+					smallGameBoard[8]=2;document.getElementById("w9").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -3767,7 +3779,7 @@
 				turn=2;
 				bigGameBoard[6][3]=1;
 				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
-					smallGameBoard[6]=1;
+					smallGameBoard[6]=1;document.getElementById("w7").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i64').src="oh.PNG";
@@ -3775,7 +3787,7 @@
 				turn=1;
 				bigGameBoard[6][3]=2;
 				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
-					smallGameBoard[6]=2;
+					smallGameBoard[6]=2;document.getElementById("w7").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -3822,7 +3834,7 @@
 				turn=2;
 				bigGameBoard[6][4]=1;
 				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
-					smallGameBoard[6]=1;
+					smallGameBoard[6]=1;document.getElementById("w7").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i65').src="oh.PNG";
@@ -3830,7 +3842,7 @@
 				turn=1;
 				bigGameBoard[6][4]=2;
 				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
-					smallGameBoard[6]=2;
+					smallGameBoard[6]=2;document.getElementById("w7").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -3877,7 +3889,7 @@
 				turn=2;
 				bigGameBoard[6][5]=1;
 				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
-					smallGameBoard[6]=1;
+					smallGameBoard[6]=1;document.getElementById("w7").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i66').src="oh.PNG";
@@ -3885,7 +3897,7 @@
 				turn=1;
 				bigGameBoard[6][5]=2;
 				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
-					smallGameBoard[6]=2;
+					smallGameBoard[6]=2;document.getElementById("w7").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -3932,7 +3944,7 @@
 				turn=2;
 				bigGameBoard[7][3]=1;
 				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
-					smallGameBoard[7]=1;
+					smallGameBoard[7]=1;document.getElementById("w8").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i67').src="oh.PNG";
@@ -3940,7 +3952,7 @@
 				turn=1;
 				bigGameBoard[7][3]=2;
 				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
-					smallGameBoard[7]=2;
+					smallGameBoard[7]=2;document.getElementById("w8").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -3987,7 +3999,7 @@
 				turn=2;
 				bigGameBoard[7][4]=1;
 				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
-					smallGameBoard[7]=1;
+					smallGameBoard[7]=1;document.getElementById("w8").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i68').src="oh.PNG";
@@ -3995,7 +4007,7 @@
 				turn=1;
 				bigGameBoard[7][4]=2;
 				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
-					smallGameBoard[7]=2;
+					smallGameBoard[7]=2;document.getElementById("w8").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -4042,7 +4054,7 @@
 				turn=2;
 				bigGameBoard[7][5]=1;
 				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
-					smallGameBoard[7]=1;
+					smallGameBoard[7]=1;document.getElementById("w8").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i69').src="oh.PNG";
@@ -4050,7 +4062,7 @@
 				turn=1;
 				bigGameBoard[7][5]=2;
 				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
-					smallGameBoard[7]=2;
+					smallGameBoard[7]=2;document.getElementById("w8").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -4097,7 +4109,7 @@
 				turn=2;
 				bigGameBoard[8][3]=1;
 				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
-					smallGameBoard[8]=1;
+					smallGameBoard[8]=1;document.getElementById("w9").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i70').src="oh.PNG";
@@ -4105,7 +4117,7 @@
 				turn=1;
 				bigGameBoard[8][3]=2;
 				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
-					smallGameBoard[8]=2;
+					smallGameBoard[8]=2;document.getElementById("w9").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -4152,7 +4164,7 @@
 				turn=2;
 				bigGameBoard[8][4]=1;
 				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
-					smallGameBoard[8]=1;
+					smallGameBoard[8]=1;document.getElementById("w9").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i71').src="oh.PNG";
@@ -4160,7 +4172,7 @@
 				turn=1;
 				bigGameBoard[8][4]=2;
 				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
-					smallGameBoard[8]=2;
+					smallGameBoard[8]=2;document.getElementById("w9").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -4207,7 +4219,7 @@
 				turn=2;
 				bigGameBoard[8][5]=1;
 				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
-					smallGameBoard[8]=1;
+					smallGameBoard[8]=1;document.getElementById("w9").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i72').src="oh.PNG";
@@ -4215,7 +4227,7 @@
 				turn=1;
 				bigGameBoard[8][5]=2;
 				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
-					smallGameBoard[8]=2;
+					smallGameBoard[8]=2;document.getElementById("w9").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -4262,7 +4274,7 @@
 				turn=2;
 				bigGameBoard[6][6]=1;
 				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
-					smallGameBoard[6]=1;
+					smallGameBoard[6]=1;document.getElementById("w7").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i73').src="oh.PNG";
@@ -4270,7 +4282,7 @@
 				turn=1;
 				bigGameBoard[6][6]=2;
 				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
-					smallGameBoard[6]=2;
+					smallGameBoard[6]=2;document.getElementById("w7").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -4317,7 +4329,7 @@
 				turn=2;
 				bigGameBoard[6][7]=1;
 				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
-					smallGameBoard[6]=1;
+					smallGameBoard[6]=1;document.getElementById("w7").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i74').src="oh.PNG";
@@ -4325,7 +4337,7 @@
 				turn=1;
 				bigGameBoard[6][7]=2;
 				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
-					smallGameBoard[6]=2;
+					smallGameBoard[6]=2;document.getElementById("w7").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -4372,7 +4384,7 @@
 				turn=2;
 				bigGameBoard[6][8]=1;
 				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
-					smallGameBoard[6]=1;
+					smallGameBoard[6]=1;document.getElementById("w7").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i75').src="oh.PNG";
@@ -4380,7 +4392,7 @@
 				turn=1;
 				bigGameBoard[6][8]=2;
 				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
-					smallGameBoard[6]=2;
+					smallGameBoard[6]=2;document.getElementById("w7").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -4427,7 +4439,7 @@
 				turn=2;
 				bigGameBoard[7][6]=1;
 				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
-					smallGameBoard[7]=1;
+					smallGameBoard[7]=1;document.getElementById("w8").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i76').src="oh.PNG";
@@ -4435,7 +4447,7 @@
 				turn=1;
 				bigGameBoard[7][6]=2;
 				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
-					smallGameBoard[7]=2;
+					smallGameBoard[7]=2;document.getElementById("w8").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -4482,7 +4494,7 @@
 				turn=2;
 				bigGameBoard[7][7]=1;
 				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
-					smallGameBoard[7]=1;
+					smallGameBoard[7]=1;document.getElementById("w8").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i77').src="oh.PNG";
@@ -4490,7 +4502,7 @@
 				turn=1;
 				bigGameBoard[7][7]=2;
 				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
-					smallGameBoard[7]=2;
+					smallGameBoard[7]=2;document.getElementById("w8").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -4536,7 +4548,7 @@
 				turn=2;
 				bigGameBoard[7][8]=1;
 				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
-					smallGameBoard[7]=1;
+					smallGameBoard[7]=1;document.getElementById("w8").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i78').src="oh.PNG";
@@ -4544,7 +4556,7 @@
 				turn=1;
 				bigGameBoard[7][8]=2;
 				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
-					smallGameBoard[7]=2;
+					smallGameBoard[7]=2;document.getElementById("w8").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -4590,7 +4602,7 @@
 				turn=2;
 				bigGameBoard[8][6]=1;
 				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
-					smallGameBoard[8]=1;
+					smallGameBoard[8]=1;document.getElementById("w9").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i79').src="oh.PNG";
@@ -4598,7 +4610,7 @@
 				turn=1;
 				bigGameBoard[8][6]=2;
 				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
-					smallGameBoard[8]=2;
+					smallGameBoard[8]=2;document.getElementById("w9").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -4644,7 +4656,7 @@
 				turn=2;
 				bigGameBoard[8][7]=1;
 				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
-					smallGameBoard[8]=1;
+					smallGameBoard[8]=1;document.getElementById("w9").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i80').src="oh.PNG";
@@ -4652,7 +4664,7 @@
 				turn=1;
 				bigGameBoard[8][7]=2;
 				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
-					smallGameBoard[8]=2;
+					smallGameBoard[8]=2;document.getElementById("w9").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
@@ -4698,7 +4710,7 @@
 				turn=2;
 				bigGameBoard[8][8]=1;
 				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
-					smallGameBoard[8]=1;
+					smallGameBoard[8]=1;document.getElementById("w9").src="ex.PNG";
 				}
 			}else{
 				document.getElementById('i81').src="oh.PNG";
@@ -4706,7 +4718,7 @@
 				turn=1;
 				bigGameBoard[8][8]=2;
 				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
-					smallGameBoard[8]=2;
+					smallGameBoard[8]=2;document.getElementById("w9").src="oh.PNG";
 				}
 			}
 			if (isDone(smallGameBoard)){
