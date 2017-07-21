@@ -1,0 +1,4953 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<title>Fractal Tic Tac Toe</title>
+ <style>
+    body{background-color:#5190ED;}
+    div.header{width:1000px;height:120px;background-color:#E5E5E5;margin-left:-500px;left:50%;position:absolute;}
+    div.game{
+	background-color:transparent;
+	position:absolute;
+	width:600px;
+	height:600px;
+	top:150px;
+	left:50%;
+	margin-left:-300px;
+	margin-bottom:30px;
+    }
+    .gameBut{
+	background-color:transparent;
+	border-color:transparent;
+	transition: all 0.5s;
+    }
+    .gameBut:hover{
+	border-color:red;
+    }
+  </style>
+</head>
+
+ 
+   <body>
+	
+      <div class="header">
+	<h1 style="text-align:center">
+	Fractal Tic-Tac-Toe
+	</h1>
+	<h3 style="text-align:center";>
+	Website Created By: Jonathon Kuo
+	</h3>
+
+</div>    
+
+      <div class="game" style="z-index:1;">
+	<!big board>
+	<img src="board.PNG" style="width:600px;height:600px;">
+      </div>
+      
+      <div class="game" style="z-index:3;">
+	<!small boards>
+	<img src="board.PNG" style="width:175px;height:175px;top:35px;position:absolute;left:20px">
+	<img src="board.PNG" style="width:175px;height:175px;top:35px;position:absolute;left:215px">
+	<img src="board.PNG" style="width:175px;height:175px;top:35px;position:absolute;left:410px">
+	<img src="board.PNG" style="width:175px;height:175px;top:200px;position:absolute;left:20px">
+	<img src="board.PNG" style="width:175px;height:175px;top:200px;position:absolute;left:215px">
+	<img src="board.PNG" style="width:175px;height:175px;top:200px;position:absolute;left:410px">
+	<img src="board.PNG" style="width:175px;height:175px;top:360px;position:absolute;left:20px">
+	<img src="board.PNG" style="width:175px;height:175px;top:360px;position:absolute;left:215px">
+	<img src="board.PNG" style="width:175px;height:175px;top:360px;position:absolute;left:410px">
+      </div>
+      <div class="game" style="z-index:4;">
+	<!squares>
+	<img id="s1" src="blank.PNG" style="width:200px;height:180px;top:30px;position:absolute;left:10px">
+	<img id="s2" src="blank.PNG" style="width:200px;height:180px;top:30px;position:absolute;left:205px">
+	<img id="s3" src="blank.PNG" style="width:200px;height:180px;top:30px;position:absolute;left:400px">
+	<img id="s4" src="blank.PNG" style="width:200px;height:180px;top:195px;position:absolute;left:10px">
+	<img id="s5" src="square.PNG" style="width:200px;height:180px;top:195px;position:absolute;left:205px">
+	<img id="s6" src="blank.PNG" style="width:200px;height:180px;top:195px;position:absolute;left:400px">
+	<img id="s7" src="blank.PNG" style="width:200px;height:180px;top:355px;position:absolute;left:10px">
+	<img id="s8" src="blank.PNG" style="width:200px;height:180px;top:355px;position:absolute;left:205px">
+	<img id="s9" src="blank.PNG" style="width:200px;height:180px;top:355px;position:absolute;left:400px">
+	</div>
+	
+	   <div class="game" style="z-index:6;">
+	<!winners>
+	<img id="w1" src="blank.PNG" style="width:200px;height:180px;top:30px;position:absolute;left:10px;filter:invert(100%);opacity:0.2">
+	<img id="w2" src="blank.PNG" style="width:200px;height:180px;top:30px;position:absolute;left:205px;filter:invert(100%);opacity:0.2">
+	<img id="w3" src="blank.PNG" style="width:200px;height:180px;top:30px;position:absolute;left:400px;filter:invert(100%);opacity:0.2">
+	<img id="w4" src="blank.PNG" style="width:200px;height:180px;top:195px;position:absolute;left:10px;filter:invert(100%);opacity:0.2">
+	<img id="w5" src="blank.PNG" style="width:200px;height:180px;top:195px;position:absolute;left:205px;filter:invert(100%);opacity:0.2">
+	<img id="w6" src="blank.PNG" style="width:200px;height:180px;top:195px;position:absolute;left:400px;filter:invert(100%);opacity:0.2">
+	<img id="w7" src="blank.PNG" style="width:200px;height:180px;top:355px;position:absolute;left:10px;filter:invert(100%);opacity:0.2">
+	<img id="w8" src="blank.PNG" style="width:200px;height:180px;top:355px;position:absolute;left:205px;filter:invert(100%);opacity:0.2">
+	<img id="w9" src="blank.PNG" style="width:200px;height:180px;top:355px;position:absolute;left:400px;filter:invert(100%);opacity:0.2">
+	</div>
+	
+	<div class="game" style="z-index:20;">
+	<!buttons>
+	<button id="b1" class="gameBut" style="width:45px;height:45px;top:45px;left:28px;position:absolute"></button>
+	<script>
+	document.getElementById('b1').onclick = function() {
+		
+	}
+	</script>
+	<button id="b2"class="gameBut" style="width:45px;height:45px;top:45px;left:85px;position:absolute">
+	<button id="b3"class="gameBut" style="width:45px;height:45px;top:45px;left:142px;position:absolute">
+	<button id="b4" class="gameBut"style="width:45px;height:45px;top:45px;left:223px;position:absolute">
+	<button id="b5"class="gameBut" style="width:45px;height:45px;top:45px;left:280px;position:absolute">
+	<button id="b6" class="gameBut" style="width:45px;height:45px;top:45px;left:335px;position:absolute">
+	<button id="b7"class="gameBut" style="width:45px;height:45px;top:45px;left:418px;position:absolute">
+	<button id="b8"  class="gameBut"style="width:45px;height:45px;top:45px;left:475px;position:absolute">
+	<button id="b9"  class="gameBut"style="width:45px;height:45px;top:45px;left:530px;position:absolute">
+	<button id="b10" class="gameBut" style="width:45px;height:45px;top:93px;left:28px;position:absolute">
+	<button id="b11" class="gameBut" style="width:45px;height:45px;top:93px;left:85px;position:absolute">
+	<button id="b12"class="gameBut" style="width:45px;height:45px;top:93px;left:142px;position:absolute">
+	<button id="b13" class="gameBut"style="width:45px;height:45px;top:93px;left:223px;position:absolute">
+	<button id="b14" class="gameBut"style="width:45px;height:45px;top:93px;left:280px;position:absolute">
+	<button id="b15" class="gameBut" style="width:45px;height:45px;top:93px;left:335px;position:absolute">
+	<button id="b16" class="gameBut" style="width:45px;height:45px;top:93px;left:418px;position:absolute">
+	<button id="b17" class="gameBut" style="width:45px;height:45px;top:93px;left:475px;position:absolute">
+	<button id="b18" class="gameBut" style="width:45px;height:45px;top:93px;left:530px;position:absolute">
+	<button id="b19" class="gameBut" style="width:45px;height:45px;top:140px;left:28px;position:absolute">
+	<button id="b20" class="gameBut" style="width:45px;height:45px;top:140px;left:85px;position:absolute">
+	<button id="b21" class="gameBut" style="width:45px;height:45px;top:140px;left:142px;position:absolute">
+	<button id="b22"class="gameBut" style="width:45px;height:45px;top:140px;left:223px;position:absolute">
+	<button id="b23"class="gameBut"  style="width:45px;height:45px;top:140px;left:280px;position:absolute">
+	<button id="b24" class="gameBut" style="width:45px;height:45px;top:140px;left:335px;position:absolute">
+	<button id="b25" class="gameBut" style="width:45px;height:45px;top:140px;left:418px;position:absolute">
+	<button id="b26" class="gameBut" style="width:45px;height:45px;top:140px;left:475px;position:absolute">
+	<button id="b27" class="gameBut" style="width:45px;height:45px;top:140px;left:530px;position:absolute">
+	<button id="b28" class="gameBut" style="width:45px;height:45px;top:210px;left:28px;position:absolute">
+	<button id="b29" class="gameBut" style="width:45px;height:45px;top:210px;left:85px;position:absolute">
+	<button id="b30" class="gameBut" style="width:45px;height:45px;top:210px;left:142px;position:absolute">
+	<button id="b31" class="gameBut" style="width:45px;height:45px;top:210px;left:223px;position:absolute">
+	
+	<button id="b32" class="gameBut" style="width:45px;height:45px;top:210px;left:280px;position:absolute">
+	<button id="b33" class="gameBut" style="width:45px;height:45px;top:210px;left:335px;position:absolute">
+	<button id="b34" class="gameBut" style="width:45px;height:45px;top:210px;left:418px;position:absolute">
+	<button id="b35" class="gameBut" style="width:45px;height:45px;top:210px;left:475px;position:absolute">
+	<button id="b36" class="gameBut" style="width:45px;height:45px;top:210px;left:530px;position:absolute">
+	<button id="b37" class="gameBut" style="width:45px;height:45px;top:257px;left:28px;position:absolute">
+	<button id="b38" class="gameBut" style="width:45px;height:45px;top:257px;left:85px;position:absolute">
+	<button id="b39" class="gameBut" style="width:45px;height:45px;top:257px;left:142px;position:absolute">
+	<button id="b40" class="gameBut" style="width:45px;height:45px;top:257px;left:223px;position:absolute">
+	<button id="b41" class="gameBut" style="width:45px;height:45px;top:257px;left:280px;position:absolute">
+	<button id="b42" class="gameBut" style="width:45px;height:45px;top:257px;left:335px;position:absolute">
+	<button id="b43" class="gameBut" style="width:45px;height:45px;top:257px;left:418px;position:absolute">
+	<button id="b44" class="gameBut" style="width:45px;height:45px;top:257px;left:475px;position:absolute">
+	<button id="b45" class="gameBut" style="width:45px;height:45px;top:257px;left:530px;position:absolute">
+	<button id="b46" class="gameBut" style="width:45px;height:45px;top:305px;left:28px;position:absolute">
+	<button id="b47" class="gameBut" style="width:45px;height:45px;top:305px;left:85px;position:absolute">
+	<button id="b48" class="gameBut" style="width:45px;height:45px;top:305px;left:142px;position:absolute">
+	<button id="b49" class="gameBut" style="width:45px;height:45px;top:305px;left:223px;position:absolute">
+	<button id="b50" class="gameBut" style="width:45px;height:45px;top:305px;left:280px;position:absolute">
+	<button id="b51" class="gameBut" style="width:45px;height:45px;top:305px;left:335px;position:absolute">
+	<button id="b52" class="gameBut" style="width:45px;height:45px;top:305px;left:418px;position:absolute">
+	<button id="b53" class="gameBut" style="width:45px;height:45px;top:305px;left:475px;position:absolute">
+	<button id="b54" class="gameBut" style="width:45px;height:45px;top:305px;left:530px;position:absolute">
+	<button id="b55" class="gameBut" style="width:45px;height:45px;top:370px;left:28px;position:absolute">
+	<button id="b56" class="gameBut" style="width:45px;height:45px;top:370px;left:85px;position:absolute">
+	<button id="b57" class="gameBut" style="width:45px;height:45px;top:370px;left:142px;position:absolute">
+	<button id="b58" class="gameBut" style="width:45px;height:45px;top:370px;left:223px;position:absolute">
+	<button id="b59" class="gameBut" style="width:45px;height:45px;top:370px;left:280px;position:absolute">
+	<button id="b60" class="gameBut" style="width:45px;height:45px;top:370px;left:335px;position:absolute">
+	<button id="b61" class="gameBut" style="width:45px;height:45px;top:370px;left:418px;position:absolute">
+	<button id="b62" class="gameBut" style="width:45px;height:45px;top:370px;left:475px;position:absolute">
+	<button id="b63" class="gameBut" style="width:45px;height:45px;top:370px;left:530px;position:absolute">
+	<button id="b64" class="gameBut" style="width:45px;height:45px;top:417px;left:28px;position:absolute">
+	<button id="b65" class="gameBut" style="width:45px;height:45px;top:417px;left:85px;position:absolute">
+	<button id="b66" class="gameBut" style="width:45px;height:45px;top:417px;left:142px;position:absolute">
+	<button id="b67" class="gameBut" style="width:45px;height:45px;top:417px;left:223px;position:absolute">
+	<button id="b68" class="gameBut" style="width:45px;height:45px;top:417px;left:280px;position:absolute">
+	<button id="b69" class="gameBut" style="width:45px;height:45px;top:417px;left:335px;position:absolute">
+	<button id="b70" class="gameBut" style="width:45px;height:45px;top:417px;left:418px;position:absolute">
+	<button id="b71" class="gameBut" style="width:45px;height:45px;top:417px;left:475px;position:absolute">
+	<button id="b72" class="gameBut" style="width:45px;height:45px;top:417px;left:530px;position:absolute">
+	<button id="b73" class="gameBut" style="width:45px;height:45px;top:465px;left:28px;position:absolute">
+	<button id="b74" class="gameBut" style="width:45px;height:45px;top:465px;left:85px;position:absolute">
+	<button id="b75" class="gameBut" style="width:45px;height:45px;top:465px;left:142px;position:absolute">
+	<button id="b76" class="gameBut" style="width:45px;height:45px;top:465px;left:223px;position:absolute">
+	<button id="b77" class="gameBut" style="width:45px;height:45px;top:465px;left:280px;position:absolute">
+	<button id="b78" class="gameBut" style="width:45px;height:45px;top:465px;left:335px;position:absolute">
+	<button id="b79" class="gameBut" style="width:45px;height:45px;top:465px;left:418px;position:absolute">
+	<button id="b80" class="gameBut" style="width:45px;height:45px;top:465px;left:475px;position:absolute">
+	<button id="b81" class="gameBut" style="width:45px;height:45px;top:465px;left:530px;position:absolute">
+	</div>
+      <div class="game" style="z-index:5;">
+	<!exes and ohs>
+	<img id="i1" src="blank.PNG" style="width:50px;height:50px;top:45px;left:28px;position:absolute">
+	<img id="i2" src="blank.PNG" style="width:50px;height:50px;top:45px;left:85px;position:absolute">
+	<img id="i3" src="blank.PNG" style="width:50px;height:50px;top:45px;left:142px;position:absolute">
+	<img id="i4" src="blank.PNG" style="width:50px;height:50px;top:45px;left:223px;position:absolute">
+	<img id="i5" src="blank.PNG" style="width:50px;height:50px;top:45px;left:280px;position:absolute">
+	<img id="i6" src="blank.PNG" style="width:50px;height:50px;top:45px;left:335px;position:absolute">
+	<img id="i7" src="blank.PNG" style="width:50px;height:50px;top:45px;left:418px;position:absolute">
+	<img id="i8" src="blank.PNG" style="width:50px;height:50px;top:45px;left:475px;position:absolute">
+	<img id="i9" src="blank.PNG" style="width:50px;height:50px;top:45px;left:530px;position:absolute">
+	<img id="i10" src="blank.PNG" style="width:50px;height:50px;top:93px;left:28px;position:absolute">
+	<img id="i11" src="blank.PNG" style="width:50px;height:50px;top:93px;left:85px;position:absolute">
+	<img id="i12" src="blank.PNG" style="width:50px;height:50px;top:93px;left:142px;position:absolute">
+	<img id="i13" src="blank.PNG" style="width:50px;height:50px;top:93px;left:223px;position:absolute">
+	<img id="i14" src="blank.PNG" style="width:50px;height:50px;top:93px;left:280px;position:absolute">
+	<img id="i15" src="blank.PNG" style="width:50px;height:50px;top:93px;left:335px;position:absolute">
+	<img id="i16" src="blank.PNG" style="width:50px;height:50px;top:93px;left:418px;position:absolute">
+	<img id="i17" src="blank.PNG" style="width:50px;height:50px;top:93px;left:475px;position:absolute">
+	<img id="i18" src="blank.PNG" style="width:50px;height:50px;top:93px;left:530px;position:absolute">
+	<img id="i19" src="blank.PNG" style="width:50px;height:50px;top:140px;left:28px;position:absolute">
+	<img id="i20" src="blank.PNG" style="width:50px;height:50px;top:140px;left:85px;position:absolute">
+	<img id="i21" src="blank.PNG" style="width:50px;height:50px;top:140px;left:142px;position:absolute">
+	<img id="i22" src="blank.PNG" style="width:50px;height:50px;top:140px;left:223px;position:absolute">
+	<img id="i23" src="blank.PNG" style="width:50px;height:50px;top:140px;left:280px;position:absolute">
+	<img id="i24" src="blank.PNG" style="width:50px;height:50px;top:140px;left:335px;position:absolute">
+	<img id="i25" src="blank.PNG" style="width:50px;height:50px;top:140px;left:418px;position:absolute">
+	<img id="i26" src="blank.PNG" style="width:50px;height:50px;top:140px;left:475px;position:absolute">
+	<img id="i27" src="blank.PNG" style="width:50px;height:50px;top:140px;left:530px;position:absolute">
+	<img id="i28" src="blank.PNG" style="width:50px;height:50px;top:210px;left:28px;position:absolute">
+	<img id="i29" src="blank.PNG" style="width:50px;height:50px;top:210px;left:85px;position:absolute">
+	<img id="i30" src="blank.PNG" style="width:50px;height:50px;top:210px;left:142px;position:absolute">
+	<img id="i31" src="blank.PNG" style="width:50px;height:50px;top:210px;left:223px;position:absolute">
+	<img id="i32" src="blank.PNG" style="width:50px;height:50px;top:210px;left:280px;position:absolute">
+	<img id="i33" src="blank.PNG" style="width:50px;height:50px;top:210px;left:335px;position:absolute">
+	<img id="i34" src="blank.PNG" style="width:50px;height:50px;top:210px;left:418px;position:absolute">
+	<img id="i35" src="blank.PNG" style="width:50px;height:50px;top:210px;left:475px;position:absolute">
+	<img id="i36" src="blank.PNG" style="width:50px;height:50px;top:210px;left:530px;position:absolute">
+	<img id="i37" src="blank.PNG" style="width:50px;height:50px;top:257px;left:28px;position:absolute">
+	<img id="i38" src="blank.PNG" style="width:50px;height:50px;top:257px;left:85px;position:absolute">
+	<img id="i39" src="blank.PNG" style="width:50px;height:50px;top:257px;left:142px;position:absolute">
+	<img id="i40" src="blank.PNG" style="width:50px;height:50px;top:257px;left:223px;position:absolute">
+	<img id="i41" src="blank.PNG" style="width:50px;height:50px;top:257px;left:280px;position:absolute">
+	<img id="i42" src="blank.PNG" style="width:50px;height:50px;top:257px;left:335px;position:absolute">
+	<img id="i43" src="blank.PNG" style="width:50px;height:50px;top:257px;left:418px;position:absolute">
+	<img id="i44" src="blank.PNG" style="width:50px;height:50px;top:257px;left:475px;position:absolute">
+	<img id="i45" src="blank.PNG" style="width:50px;height:50px;top:257px;left:530px;position:absolute">
+	<img id="i46" src="blank.PNG" style="width:50px;height:50px;top:305px;left:28px;position:absolute">
+	<img id="i47" src="blank.PNG" style="width:50px;height:50px;top:305px;left:85px;position:absolute">
+	<img id="i48" src="blank.PNG" style="width:50px;height:50px;top:305px;left:142px;position:absolute">
+	<img id="i49" src="blank.PNG" style="width:50px;height:50px;top:305px;left:223px;position:absolute">
+	<img id="i50" src="blank.PNG" style="width:50px;height:50px;top:305px;left:280px;position:absolute">
+	<img id="i51" src="blank.PNG" style="width:50px;height:50px;top:305px;left:335px;position:absolute">
+	<img id="i52" src="blank.PNG" style="width:50px;height:50px;top:305px;left:418px;position:absolute">
+	<img id="i53" src="blank.PNG" style="width:50px;height:50px;top:305px;left:475px;position:absolute">
+	<img id="i54" src="blank.PNG" style="width:50px;height:50px;top:305px;left:530px;position:absolute">
+	<img id="i55" src="blank.PNG" style="width:50px;height:50px;top:370px;left:28px;position:absolute">
+	<img id="i56" src="blank.PNG" style="width:50px;height:50px;top:370px;left:85px;position:absolute">
+	<img id="i57" src="blank.PNG" style="width:50px;height:50px;top:370px;left:142px;position:absolute">
+	<img id="i58" src="blank.PNG" style="width:50px;height:50px;top:370px;left:223px;position:absolute">
+	<img id="i59" src="blank.PNG" style="width:50px;height:50px;top:370px;left:280px;position:absolute">
+	<img id="i60" src="blank.PNG" style="width:50px;height:50px;top:370px;left:335px;position:absolute">
+	<img id="i61" src="blank.PNG" style="width:50px;height:50px;top:370px;left:418px;position:absolute">
+	<img id="i62" src="blank.PNG" style="width:50px;height:50px;top:370px;left:475px;position:absolute">
+	<img id="i63" src="blank.PNG" style="width:50px;height:50px;top:370px;left:530px;position:absolute">
+	<img id="i64" src="blank.PNG" style="width:50px;height:50px;top:417px;left:28px;position:absolute">
+	<img id="i65" src="blank.PNG" style="width:50px;height:50px;top:417px;left:85px;position:absolute">
+	<img id="i66" src="blank.PNG" style="width:50px;height:50px;top:417px;left:142px;position:absolute">
+	<img id="i67" src="blank.PNG" style="width:50px;height:50px;top:417px;left:223px;position:absolute">
+	<img id="i68" src="blank.PNG" style="width:50px;height:50px;top:417px;left:280px;position:absolute">
+	<img id="i69" src="blank.PNG" style="width:50px;height:50px;top:417px;left:335px;position:absolute">
+	<img id="i70" src="blank.PNG" style="width:50px;height:50px;top:417px;left:418px;position:absolute">
+	<img id="i71" src="blank.PNG" style="width:50px;height:50px;top:417px;left:475px;position:absolute">
+	<img id="i72" src="blank.PNG" style="width:50px;height:50px;top:417px;left:530px;position:absolute">
+	<img id="i73" src="blank.PNG" style="width:50px;height:50px;top:465px;left:28px;position:absolute">
+	<img id="i74" src="blank.PNG" style="width:50px;height:50px;top:465px;left:85px;position:absolute">
+	<img id="i75" src="blank.PNG" style="width:50px;height:50px;top:465px;left:142px;position:absolute">
+	<img id="i76" src="blank.PNG" style="width:50px;height:50px;top:465px;left:223px;position:absolute">
+	<img id="i77" src="blank.PNG" style="width:50px;height:50px;top:465px;left:280px;position:absolute">
+	<img id="i78" src="blank.PNG" style="width:50px;height:50px;top:465px;left:335px;position:absolute">
+	<img id="i79" src="blank.PNG" style="width:50px;height:50px;top:465px;left:418px;position:absolute">
+	<img id="i80" src="blank.PNG" style="width:50px;height:50px;top:465px;left:475px;position:absolute">
+	<img id="i81" src="blank.PNG" style="width:50px;height:50px;top:465px;left:530px;position:absolute">
+      </div>
+	<div style="background-color:transparent;position:absolute;width:200px;height:200px;left:50%;margin-left:-100px;top:700px;margin-bottom:30px">
+	<h2 id="winText" style="text-align:center">Turn</h2>
+	<img id="winIMG" src="ex.PNG"style="width:100px;height:100px;margin:auto;display:block">
+	</div>
+	<script>
+	var turn=1;
+	var bigGameBoard=[[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0]];
+	var smallGameBoard=[0,0,0,0,0,0,0,0,0];
+	var bools=[false,false,false,false,true,false,false,false,false];
+  var squareMap=[[1,4,7,28,31,34,55,58,61],[2,5,8,29,32,35,56,59,62],[3,6,9,30,33,36,57,60,63],[10,13,16,37,40,43,64,67,70],[11,14,17,38,41,44,65,68,71],[12,15,18,39,42,45,66,69,72],[19,22,25,46,49,52,73,76,79],[20,23,26,47,50,53,74,77,80],[21,24,27,48,51,54,75,78,81]]
+	</script>
+      <script>
+	function isDone(arr){
+		
+		if ((arr[0]===arr[1] && arr[1]===arr[2] && arr[0]!=0) || (arr[3]===arr[4] && arr[4]===arr[5]  && arr[3]!=0)|| (arr[6]===arr[7] && arr[6]===arr[8] && arr[6]!=0) || (arr[0]===arr[3] && arr[0]===arr[6] && arr[0]!=0) || (arr[1]===arr[4] && arr[1]===arr[7] && arr[1]!=0) || (arr[2]===arr[5] && arr[2]===arr[8] && arr[2]!=0) || (arr[0]===arr[4] && arr[0]===arr[8] && arr[0]!=0) || (arr[2]===arr[4] && arr[2]===arr[6] && arr[2]!=0)){
+			
+			return true;
+		}else return false;
+	}
+      </script>
+      <script>
+      function almostDone(arr){
+      var ret=[0,0,0,0,0,0,0,0,0];
+      if (arr[0]==arr[1]&&arr[0]!=0&&!isDone(arr)&&ret[2]==0)ret[2]=arr[0];
+      if (arr[0]==arr[2]&&arr[0]!=0&&!isDone(arr)&&ret[1]==0)ret[1]=arr[0];
+      if (arr[1]==arr[2]&&arr[1]!=0&&!isDone(arr)&&ret[0]==0)ret[0]=arr[1];
+      
+      if (arr[3]==arr[4]&&arr[3]!=0&&!isDone(arr)&&ret[5]==0)ret[5]=arr[3];
+      if (arr[3]==arr[5]&&arr[3]!=0&&!isDone(arr)&&ret[4]==0)ret[4]=arr[3];
+      if (arr[4]==arr[5]&&arr[4]!=0&&!isDone(arr)&&ret[3]==0)ret[3]=arr[4];
+      
+      if (arr[6]==arr[7]&&arr[6]!=0&&!isDone(arr)&&ret[8]==0)ret[8]=arr[6];
+      if (arr[6]==arr[8]&&arr[6]!=0&&!isDone(arr)&&ret[7]==0)ret[7]=arr[6];
+      if (arr[7]==arr[8]&&arr[7]!=0&&!isDone(arr)&&ret[6]==0)ret[6]=arr[7];
+      
+      if (arr[0]==arr[3]&&arr[0]!=0&&!isDone(arr)&&ret[6]==0)ret[6]=arr[0];
+      if (arr[0]==arr[6]&&arr[0]!=0&&!isDone(arr)&&ret[3]==0)ret[3]=arr[0];
+      if (arr[3]==arr[6]&&arr[3]!=0&&!isDone(arr)&&ret[0]==0)ret[0]=arr[3];
+      
+      if (arr[1]==arr[4]&&arr[1]!=0&&!isDone(arr)&&ret[7]==0)ret[7]=arr[1];
+      if (arr[1]==arr[7]&&arr[1]!=0&&!isDone(arr)&&ret[4]==0)ret[4]=arr[1];
+      if (arr[4]==arr[7]&&arr[4]!=0&&!isDone(arr)&&ret[1]==0)ret[1]=arr[4];
+      
+      if (arr[2]==arr[5]&&arr[2]!=0&&!isDone(arr)&&ret[8]==0)ret[8]=arr[2];
+      if (arr[2]==arr[8]&&arr[2]!=0&&!isDone(arr)&&ret[5]==0)ret[5]=arr[2];
+      if (arr[5]==arr[8]&&arr[5]!=0&&!isDone(arr)&&ret[2]==0)ret[2]=arr[5];
+      
+      if (arr[0]==arr[4]&&arr[0]!=0&&!isDone(arr)&&ret[8]==0)ret[8]=arr[0];
+      if (arr[0]==arr[8]&&arr[0]!=0&&!isDone(arr)&&ret[4]==0)ret[4]=arr[0];
+      if (arr[4]==arr[8]&&arr[4]!=0&&!isDone(arr)&&ret[0]==0)ret[0]=arr[4];
+      
+      if (arr[2]==arr[4]&&arr[2]!=0&&!isDone(arr)&&ret[6]==0)ret[6]=arr[2];
+      if (arr[4]==arr[6]&&arr[4]!=0&&!isDone(arr)&&ret[2]==0)ret[2]=arr[4];
+      if (arr[2]==arr[6]&&arr[2]!=0&&!isDone(arr)&&ret[4]==0)ret[4]=arr[2];
+      
+      return ret;
+      }
+      </script>
+      
+<script>
+function computePlay(){
+  var max=0;
+  var ret=0;
+  var gameDict = [0,0,0,0,0,0,0,0,0];
+  
+  for (x=0;x<9;x++){
+    var count=0;
+   
+    
+    for (j=0;j<9;j++){
+      if (bigGameBoard[x][j]==1) count++;
+    }
+    gameDict[x]=[x,count,0,0,0,0];
+    if (isDone(bigGameBoard[x])){gameDict[x][3]=1};
+  }
+  
+ 
+  
+  for (k=0;k<9;k++){
+    if (bools[k]){
+    	var winnable=almostDone(bigGameBoard[k]);
+    	console.log(winnable);
+    	for (g=0;g<9;g++){
+    	var winnable2=almostDone(bigGameBoard[g]);
+    	if (winnable2.indexOf(1)>-1)gameDict[g][5]=1;
+    	if (winnable[g]==2)gameDict[g][2]=winnable[g];
+    	else gameDict[g][4]=winnable[g];
+    	}
+    	
+    	
+ gameDict.sort(function(first,second){
+	  return second[4]-first[4];
+  });
+gameDict.sort(function(first,second){
+	  return first[5]-second[5];
+  });	    
+
+  
+  
+  gameDict.sort(function(first,second){
+	  return second[3]-first[3];
+  });
+  
+	    gameDict.sort(function(first,second){
+    	return second[2]-first[2];
+    	});
+	    for (c=0;c<9;c++){console.log(gameDict[c]);}
+	     var y=0;
+	 while (turn==2){
+		
+		 var index=gameDict[y][0];
+		 document.getElementById('b'+squareMap[index][k]).click();
+		 y++;
+	 }
+	
+     
+    }
+  }
+}
+	
+	document.getElementById('b1').onclick = function(){
+		if(bools[0] && document.getElementById('i1').src.indexOf('blank.PNG')>-1){
+			bools[0]=false;
+			bools[0]=true;
+			document.getElementById('s1').src="blank.PNG";
+			document.getElementById('s1').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i1').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[0][0]=1;
+				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
+					smallGameBoard[0]=1;document.getElementById('w1').src="ex.PNG";
+					
+				}
+        
+			}else{
+				document.getElementById('i1').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[0][0]=2;
+				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
+					smallGameBoard[0]=2;document.getElementById('w1').src='oh.PNG';
+					
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[0]=false;
+				document.getElementById('s1').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[0].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[0]=false;
+				document.getElementById('s1').src="blank.PNG";
+				if (bigGameBoard[0].indexOf(0)!=-1){
+					bools[0]=true;
+					document.getElementById('s1').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}	
+	</script>	
+	
+	<script>
+		document.getElementById('b2').onclick = function() {
+		if(bools[0] && document.getElementById('i2').src.indexOf('blank.PNG')>-1){
+			bools[0]=false;
+			bools[1]=true;
+			document.getElementById('s1').src="blank.PNG";
+			document.getElementById('s2').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i2').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[0][1]=1;
+				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
+					smallGameBoard[0]=1;document.getElementById('w1').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i2').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[0][1]=2;
+				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
+					smallGameBoard[0]=2;document.getElementById('w1').src='oh.PNG';
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[1]=false;
+				document.getElementById('s2').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[1].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[1]=false;
+				document.getElementById('s2').src="blank.PNG";
+				if (bigGameBoard[0].indexOf(0)!=-1){
+					bools[0]=true;
+					document.getElementById('s1').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+		document.getElementById('b3').onclick = function() {
+		if(bools[0] && document.getElementById('i3').src.indexOf('blank.PNG')>-1){
+			bools[0]=false;
+			bools[2]=true;
+			document.getElementById('s1').src="blank.PNG";
+			document.getElementById('s3').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i3').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[0][2]=1;
+				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
+					smallGameBoard[0]=1;document.getElementById('w1').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i3').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[0][2]=2;
+				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
+					smallGameBoard[0]=2;document.getElementById('w1').src='oh.PNG';
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[2]=false;
+				document.getElementById('s3').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[2].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[2]=false;
+				document.getElementById('s3').src="blank.PNG";
+				if (bigGameBoard[0].indexOf(0)!=-1){
+					bools[0]=true;
+					document.getElementById('s1').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+
+	<script>
+		document.getElementById('b4').onclick = function() {
+		if(bools[1] && document.getElementById('i4').src.indexOf('blank.PNG')>-1){
+			bools[1]=false;
+			bools[0]=true;
+			document.getElementById('s2').src="blank.PNG";
+			document.getElementById('s1').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i4').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[1][0]=1;
+				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
+					smallGameBoard[1]=1;document.getElementById('w2').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i4').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[1][0]=2;
+				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
+					smallGameBoard[1]=2;document.getElementById('w2').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[0]=false;
+				document.getElementById('s1').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[0].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[0]=false;
+				document.getElementById('s1').src="blank.PNG";
+				if (bigGameBoard[1].indexOf(0)!=-1){
+					bools[1]=true;
+					document.getElementById('s2').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+		document.getElementById('b5').onclick = function() {
+		if(bools[1] && document.getElementById('i5').src.indexOf('blank.PNG')>-1){
+			bools[1]=false;
+			bools[1]=true;
+			document.getElementById('s2').src="blank.PNG";
+			document.getElementById('s2').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i5').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[1][1]=1;
+				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
+					smallGameBoard[1]=1;document.getElementById('w2').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i5').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[1][1]=2;
+				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
+					smallGameBoard[1]=2;document.getElementById('w2').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[1]=false;
+				document.getElementById('s2').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[1].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[1]=false;
+				document.getElementById('s2').src="blank.PNG";
+				if (bigGameBoard[1].indexOf(0)!=-1){
+					bools[1]=true;
+					document.getElementById('s2').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+		document.getElementById('b6').onclick = function() {
+		if(bools[1] && document.getElementById('i6').src.indexOf('blank.PNG')>-1){
+			bools[1]=false;
+			bools[2]=true;
+			document.getElementById('s2').src="blank.PNG";
+			document.getElementById('s3').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i6').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[1][2]=1;
+				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
+					smallGameBoard[1]=1;document.getElementById('w2').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i6').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[1][2]=2;
+				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
+					smallGameBoard[1]=2;document.getElementById('w2').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[2]=false;
+				document.getElementById('s3').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[2].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[2]=false;
+				document.getElementById('s3').src="blank.PNG";
+				if (bigGameBoard[1].indexOf(0)!=-1){
+					bools[1]=true;
+					document.getElementById('s2').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+		document.getElementById('b7').onclick = function() {
+		if(bools[2] && document.getElementById('i7').src.indexOf('blank.PNG')>-1){
+			bools[2]=false;
+			bools[0]=true;
+			document.getElementById('s3').src="blank.PNG";
+			document.getElementById('s1').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i7').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[2][0]=1;
+				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
+					smallGameBoard[2]=1;document.getElementById('w3').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i7').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[2][0]=2;
+				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
+					smallGameBoard[2]=2;document.getElementById('w3').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[0]=false;
+				document.getElementById('s1').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[0].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[0]=false;
+				document.getElementById('s1').src="blank.PNG";
+				if (bigGameBoard[2].indexOf(0)!=-1){
+					bools[2]=true;
+					document.getElementById('s3').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+		document.getElementById('b8').onclick = function() {
+		if(bools[2] && document.getElementById('i8').src.indexOf('blank.PNG')>-1){
+			bools[2]=false;
+			bools[1]=true;
+			document.getElementById('s3').src="blank.PNG";
+			document.getElementById('s2').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i8').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[2][1]=1;
+				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
+					smallGameBoard[2]=1;document.getElementById('w3').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i8').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[2][1]=2;
+				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
+					smallGameBoard[2]=2;document.getElementById('w3').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[1]=false;
+				document.getElementById('s2').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[1].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[1]=false;
+				document.getElementById('s2').src="blank.PNG";
+				if (bigGameBoard[2].indexOf(0)!=-1){
+					bools[2]=true;
+					document.getElementById('s3').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+		document.getElementById('b9').onclick = function() {
+		if(bools[2] && document.getElementById('i9').src.indexOf('blank.PNG')>-1){
+			bools[2]=false;
+			bools[2]=true;
+			document.getElementById('s3').src="blank.PNG";
+			document.getElementById('s3').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i9').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[2][2]=1;
+				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
+					smallGameBoard[2]=1;document.getElementById('w3').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i9').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[2][2]=2;
+				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
+					smallGameBoard[2]=2;document.getElementById('w3').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[2]=false;
+				document.getElementById('s3').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[2].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[2]=false;
+				document.getElementById('s3').src="blank.PNG";
+				if (bigGameBoard[2].indexOf(0)!=-1){
+					bools[2]=true;
+					document.getElementById('s3').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b10').onclick = function() {
+		if(bools[0] && document.getElementById('i10').src.indexOf('blank.PNG')>-1){
+			bools[0]=false;
+			bools[3]=true;
+			document.getElementById('s1').src="blank.PNG";
+			document.getElementById('s4').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i10').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[0][3]=1;
+				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
+					smallGameBoard[0]=1;document.getElementById('w1').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i10').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[0][3]=2;
+				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
+					smallGameBoard[0]=2;document.getElementById('w1').src='oh.PNG';
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[3]=false;
+				document.getElementById('s4').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[3].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[3]=false;
+				document.getElementById('s4').src="blank.PNG";
+				if (bigGameBoard[0].indexOf(0)!=-1){
+					bools[0]=true;
+					document.getElementById('s1').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b11').onclick = function() {
+		if(bools[0] && document.getElementById('i11').src.indexOf('blank.PNG')>-1){
+			bools[0]=false;
+			bools[4]=true;
+			document.getElementById('s1').src="blank.PNG";
+			document.getElementById('s5').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i11').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[0][4]=1;
+				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
+					smallGameBoard[0]=1;document.getElementById('w1').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i11').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[0][4]=2;
+				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
+					smallGameBoard[0]=2;document.getElementById('w1').src='oh.PNG';
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[4]=false;
+				document.getElementById('s5').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[4].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[4]=false;
+				document.getElementById('s5').src="blank.PNG";
+				if (bigGameBoard[0].indexOf(0)!=-1){
+					bools[0]=true;
+					document.getElementById('s1').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b12').onclick = function() {
+		if(bools[0] && document.getElementById('i12').src.indexOf('blank.PNG')>-1){
+			bools[0]=false;
+			bools[5]=true;
+			document.getElementById('s1').src="blank.PNG";
+			document.getElementById('s6').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i12').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[0][5]=1;
+				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
+					smallGameBoard[0]=1;document.getElementById('w1').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i12').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[0][5]=2;
+				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
+					smallGameBoard[0]=2;document.getElementById('w1').src='oh.PNG';
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[5]=false;
+				document.getElementById('s6').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[5].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[5]=false;
+				document.getElementById('s6').src="blank.PNG";
+				if (bigGameBoard[0].indexOf(0)!=-1){
+					bools[0]=true;
+					document.getElementById('s1').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b13').onclick = function() {
+		if(bools[1] && document.getElementById('i13').src.indexOf('blank.PNG')>-1){
+			bools[1]=false;
+			bools[3]=true;
+			document.getElementById('s2').src="blank.PNG";
+			document.getElementById('s4').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i13').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[1][3]=1;
+				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
+					smallGameBoard[1]=1;document.getElementById('w2').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i13').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[1][3]=2;
+				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
+					smallGameBoard[1]=2;document.getElementById('w2').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[3]=false;
+				document.getElementById('s4').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[3].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[3]=false;
+				document.getElementById('s4').src="blank.PNG";
+				if (bigGameBoard[1].indexOf(0)!=-1){
+					bools[1]=true;
+					document.getElementById('s2').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+
+	<script>
+	document.getElementById('b14').onclick = function() {
+		if(bools[1] && document.getElementById('i14').src.indexOf('blank.PNG')>-1){
+			bools[1]=false;
+			bools[4]=true;
+			document.getElementById('s2').src="blank.PNG";
+			document.getElementById('s5').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i14').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[1][4]=1;
+				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
+					smallGameBoard[1]=1;document.getElementById('w2').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i14').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[1][4]=2;
+				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
+					smallGameBoard[1]=2;document.getElementById('w2').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[4]=false;
+				document.getElementById('s5').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[4].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[4]=false;
+				document.getElementById('s5').src="blank.PNG";
+				if (bigGameBoard[1].indexOf(0)!=-1){
+					bools[1]=true;
+					document.getElementById('s2').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+
+	<script>
+	document.getElementById('b15').onclick = function() {
+		if(bools[1] && document.getElementById('i15').src.indexOf('blank.PNG')>-1){
+			bools[1]=false;
+			bools[5]=true;
+			document.getElementById('s2').src="blank.PNG";
+			document.getElementById('s6').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i15').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[1][5]=1;
+				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
+					smallGameBoard[1]=1;document.getElementById('w2').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i15').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[1][5]=2;
+				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
+					smallGameBoard[1]=2;document.getElementById('w2').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[5]=false;
+				document.getElementById('s6').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[5].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[5]=false;
+				document.getElementById('s6').src="blank.PNG";
+				if (bigGameBoard[1].indexOf(0)!=-1){
+					bools[1]=true;
+					document.getElementById('s2').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b16').onclick = function() {
+		if(bools[2] && document.getElementById('i16').src.indexOf('blank.PNG')>-1){
+			bools[2]=false;
+			bools[3]=true;
+			document.getElementById('s3').src="blank.PNG";
+			document.getElementById('s4').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i16').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[2][3]=1;
+				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
+					smallGameBoard[2]=1;document.getElementById('w3').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i16').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[2][3]=2;
+				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
+					smallGameBoard[2]=2;document.getElementById('w3').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[3]=false;
+				document.getElementById('s4').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[3].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[3]=false;
+				document.getElementById('s4').src="blank.PNG";
+				if (bigGameBoard[2].indexOf(0)!=-1){
+					bools[2]=true;
+					document.getElementById('s3').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b17').onclick = function() {
+		if(bools[2] && document.getElementById('i17').src.indexOf('blank.PNG')>-1){
+			bools[2]=false;
+			bools[4]=true;
+			document.getElementById('s3').src="blank.PNG";
+			document.getElementById('s5').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i17').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[2][4]=1;
+				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
+					smallGameBoard[2]=1;document.getElementById('w3').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i17').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[2][4]=2;
+				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
+					smallGameBoard[2]=2;document.getElementById('w3').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[4]=false;
+				document.getElementById('s5').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[4].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[4]=false;
+				document.getElementById('s5').src="blank.PNG";
+				if (bigGameBoard[2].indexOf(0)!=-1){
+					bools[2]=true;
+					document.getElementById('s3').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b18').onclick = function() {
+		if(bools[2] && document.getElementById('i18').src.indexOf('blank.PNG')>-1){
+			bools[2]=false;
+			bools[5]=true;
+			document.getElementById('s3').src="blank.PNG";
+			document.getElementById('s6').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i18').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[2][5]=1;
+				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
+					smallGameBoard[2]=1;document.getElementById('w3').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i18').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[2][5]=2;
+				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
+					smallGameBoard[2]=2;document.getElementById('w3').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[5]=false;
+				document.getElementById('s6').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[5].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[5]=false;
+				document.getElementById('s6').src="blank.PNG";
+				if (bigGameBoard[2].indexOf(0)!=-1){
+					bools[2]=true;
+					document.getElementById('s3').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b19').onclick = function() {
+		if(bools[0] && document.getElementById('i19').src.indexOf('blank.PNG')>-1){
+			bools[0]=false;
+			bools[6]=true;
+			document.getElementById('s1').src="blank.PNG";
+			document.getElementById('s7').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i19').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[0][6]=1;
+				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
+					smallGameBoard[0]=1;document.getElementById('w1').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i19').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[0][6]=2;
+				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
+					smallGameBoard[0]=2;document.getElementById('w1').src='oh.PNG';
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[6]=false;
+				document.getElementById('s7').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[6].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[6]=false;
+				document.getElementById('s7').src="blank.PNG";
+				if (bigGameBoard[0].indexOf(0)!=-1){
+					bools[0]=true;
+					document.getElementById('s1').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b20').onclick = function() {
+		if(bools[0] && document.getElementById('i20').src.indexOf('blank.PNG')>-1){
+			bools[0]=false;
+			bools[7]=true;
+			document.getElementById('s1').src="blank.PNG";
+			document.getElementById('s8').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i20').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[0][7]=1;
+				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
+					smallGameBoard[0]=1;document.getElementById('w1').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i20').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[0][7]=2;
+				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
+					smallGameBoard[0]=2;document.getElementById('w1').src='oh.PNG';
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[7]=false;
+				document.getElementById('s8').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[7].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[7]=false;
+				document.getElementById('s8').src="blank.PNG";
+				if (bigGameBoard[0].indexOf(0)!=-1){
+					bools[0]=true;
+					document.getElementById('s1').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b21').onclick = function() {
+		if(bools[0] && document.getElementById('i21').src.indexOf('blank.PNG')>-1){
+			bools[0]=false;
+			bools[8]=true;
+			document.getElementById('s1').src="blank.PNG";
+			document.getElementById('s9').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i21').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[0][8]=1;
+				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
+					smallGameBoard[0]=1;document.getElementById('w1').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i21').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[0][8]=2;
+				if (isDone(bigGameBoard[0]) && smallGameBoard[0]==0){
+					smallGameBoard[0]=2;document.getElementById('w1').src='oh.PNG';
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[8]=false;
+				document.getElementById('s9').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[8].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[8]=false;
+				document.getElementById('s9').src="blank.PNG";
+				if (bigGameBoard[0].indexOf(0)!=-1){
+					bools[0]=true;
+					document.getElementById('s1').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b22').onclick = function() {
+		if(bools[1] && document.getElementById('i22').src.indexOf('blank.PNG')>-1){
+			bools[1]=false;
+			bools[6]=true;
+			document.getElementById('s2').src="blank.PNG";
+			document.getElementById('s7').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i22').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[1][6]=1;
+				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
+					smallGameBoard[1]=1;document.getElementById('w2').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i22').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[1][6]=2;
+				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
+					smallGameBoard[1]=2;document.getElementById('w2').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[6]=false;
+				document.getElementById('s7').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[6].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[6]=false;
+				document.getElementById('s7').src="blank.PNG";
+				if (bigGameBoard[1].indexOf(0)!=-1){
+					bools[1]=true;
+					document.getElementById('s2').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b23').onclick = function() {
+		if(bools[1] && document.getElementById('i23').src.indexOf('blank.PNG')>-1){
+			bools[1]=false;
+			bools[7]=true;
+			document.getElementById('s2').src="blank.PNG";
+			document.getElementById('s8').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i23').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[1][7]=1;
+				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
+					smallGameBoard[1]=1;document.getElementById('w2').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i23').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[1][7]=2;
+				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
+					smallGameBoard[1]=2;document.getElementById('w2').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[7]=false;
+				document.getElementById('s8').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[7].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[7]=false;
+				document.getElementById('s8').src="blank.PNG";
+				if (bigGameBoard[1].indexOf(0)!=-1){
+					bools[1]=true;
+					document.getElementById('s2').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b24').onclick = function() {
+		if(bools[1] && document.getElementById('i24').src.indexOf('blank.PNG')>-1){
+			bools[1]=false;
+			bools[8]=true;
+			document.getElementById('s2').src="blank.PNG";
+			document.getElementById('s9').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i24').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[1][8]=1;
+				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
+					smallGameBoard[1]=1;document.getElementById('w2').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i24').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[1][8]=2;
+				if (isDone(bigGameBoard[1]) && smallGameBoard[1]==0){
+					smallGameBoard[1]=2;document.getElementById('w2').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[8]=false;
+				document.getElementById('s9').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[8].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[8]=false;
+				document.getElementById('s9').src="blank.PNG";
+				if (bigGameBoard[1].indexOf(0)!=-1){
+					bools[1]=true;
+					document.getElementById('s2').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b25').onclick = function() {
+		if(bools[2] && document.getElementById('i25').src.indexOf('blank.PNG')>-1){
+			bools[2]=false;
+			bools[6]=true;
+			document.getElementById('s3').src="blank.PNG";
+			document.getElementById('s7').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i25').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[2][6]=1;
+				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
+					smallGameBoard[2]=1;document.getElementById('w3').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i25').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[2][6]=2;
+				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
+					smallGameBoard[2]=2;document.getElementById('w3').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[6]=false;
+				document.getElementById('s7').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[6].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[6]=false;
+				document.getElementById('s7').src="blank.PNG";
+				if (bigGameBoard[2].indexOf(0)!=-1){
+					bools[2]=true;
+					document.getElementById('s3').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b26').onclick = function() {
+		if(bools[2] && document.getElementById('i26').src.indexOf('blank.PNG')>-1){
+			bools[2]=false;
+			bools[7]=true;
+			document.getElementById('s3').src="blank.PNG";
+			document.getElementById('s8').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i26').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[2][7]=1;
+				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
+					smallGameBoard[2]=1;document.getElementById('w3').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i26').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[2][7]=2;
+				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
+					smallGameBoard[2]=2;document.getElementById('w3').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[7]=false;
+				document.getElementById('s8').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[7].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[7]=false;
+				document.getElementById('s8').src="blank.PNG";
+				if (bigGameBoard[2].indexOf(0)!=-1){
+					bools[2]=true;
+					document.getElementById('s3').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b27').onclick = function() {
+		if(bools[2] && document.getElementById('i27').src.indexOf('blank.PNG')>-1){
+			bools[2]=false;
+			bools[8]=true;
+			document.getElementById('s3').src="blank.PNG";
+			document.getElementById('s9').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i27').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[2][8]=1;
+				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
+					smallGameBoard[2]=1;document.getElementById('w3').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i27').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[2][8]=2;
+				if (isDone(bigGameBoard[2]) && smallGameBoard[2]==0){
+					smallGameBoard[2]=2;document.getElementById('w3').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[8]=false;
+				document.getElementById('s9').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[8].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[8]=false;
+				document.getElementById('s9').src="blank.PNG";
+				if (bigGameBoard[2].indexOf(0)!=-1){
+					bools[2]=true;
+					document.getElementById('s3').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+
+	<script>
+	document.getElementById('b28').onclick = function() {
+		if(bools[3] && document.getElementById('i28').src.indexOf('blank.PNG')>-1){
+			bools[3]=false;
+			bools[0]=true;
+			document.getElementById('s4').src="blank.PNG";
+			document.getElementById('s1').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i28').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[3][0]=1;
+				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
+					smallGameBoard[3]=1;document.getElementById('w4').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i28').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[3][0]=2;
+				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
+					smallGameBoard[3]=2;document.getElementById("w4").src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[0]=false;
+				document.getElementById('s1').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[0].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[0]=false;
+				document.getElementById('s1').src="blank.PNG";
+				if (bigGameBoard[3].indexOf(0)!=-1){
+					bools[3]=true;
+					document.getElementById('s4').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+
+	<script>
+	document.getElementById('b29').onclick = function() {
+		if(bools[3] && document.getElementById('i29').src.indexOf('blank.PNG')>-1){
+			bools[3]=false;
+			bools[1]=true;
+			document.getElementById('s4').src="blank.PNG";
+			document.getElementById('s2').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i29').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[3][1]=1;
+				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
+					smallGameBoard[3]=1;document.getElementById('w4').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i29').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[3][1]=2;
+				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
+					smallGameBoard[3]=2;document.getElementById("w4").src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[1]=false;
+				document.getElementById('s2').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[1].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[1]=false;
+				document.getElementById('s2').src="blank.PNG";
+				if (bigGameBoard[3].indexOf(0)!=-1){
+					bools[3]=true;
+					document.getElementById('s4').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+
+	<script>
+	document.getElementById('b30').onclick = function() {
+		if(bools[3] && document.getElementById('i30').src.indexOf('blank.PNG')>-1){
+			bools[3]=false;
+			bools[2]=true;
+			document.getElementById('s4').src="blank.PNG";
+			document.getElementById('s3').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i30').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[3][2]=1;
+				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
+					smallGameBoard[3]=1;document.getElementById('w4').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i30').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[3][2]=2;
+				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
+					smallGameBoard[3]=2;document.getElementById("w4").src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[2]=false;
+				document.getElementById('s3').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[2].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[2]=false;
+				document.getElementById('s3').src="blank.PNG";
+				if (bigGameBoard[3].indexOf(0)!=-1){
+					bools[3]=true;
+					document.getElementById('s4').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+
+      <script>
+	document.getElementById('b31').onclick = function() {
+		if(bools[4] && document.getElementById('i31').src.indexOf('blank.PNG')>-1){
+			bools[4]=false;
+			bools[0]=true;
+			document.getElementById('s5').src="blank.PNG";
+			document.getElementById('s1').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i31').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[4][0]=1;
+				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
+					smallGameBoard[4]=1;document.getElementById('w5').src="ex.PNG";
+				}
+				
+			}else{
+				document.getElementById('i31').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[4][0]=2;
+				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
+					smallGameBoard[4]=2;document.getElementById('w5').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[0]=false;
+				document.getElementById('s1').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[0].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[0]=false;
+				document.getElementById('s1').src="blank.PNG";
+				if (bigGameBoard[4].indexOf(0)!=-1){
+					bools[4]=true;
+					document.getElementById('s5').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b32').onclick = function() {
+		if(bools[4] && document.getElementById('i32').src.indexOf('blank.PNG')>-1){
+			bools[4]=false;
+			bools[1]=true;
+			document.getElementById('s5').src="blank.PNG";
+			document.getElementById('s2').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i32').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[4][1]=1;
+				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
+					smallGameBoard[4]=1;document.getElementById('w5').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i32').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[4][1]=2;
+				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
+					smallGameBoard[4]=2;document.getElementById('w5').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[1]=false;
+				document.getElementById('s2').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[1].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[1]=false;
+				document.getElementById('s2').src="blank.PNG";
+				if (bigGameBoard[4].indexOf(0)!=-1){
+					bools[4]=true;
+					document.getElementById('s5').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+
+
+	<script>
+	document.getElementById('b33').onclick = function() {
+		if(bools[4] && document.getElementById('i33').src.indexOf('blank.PNG')>-1){
+			bools[4]=false;
+			bools[2]=true;
+			document.getElementById('s5').src="blank.PNG";
+			document.getElementById('s3').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i33').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[4][2]=1;
+				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
+					smallGameBoard[4]=1;document.getElementById('w5').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i33').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[4][2]=2;
+				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
+					smallGameBoard[4]=2;document.getElementById('w5').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[2]=false;
+				document.getElementById('s3').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[2].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[2]=false;
+				document.getElementById('s3').src="blank.PNG";
+				if (bigGameBoard[4].indexOf(0)!=-1){
+					bools[4]=true;
+					document.getElementById('s5').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+
+	<script>
+	document.getElementById('b34').onclick = function() {
+		if(bools[5] && document.getElementById('i34').src.indexOf('blank.PNG')>-1){
+			bools[5]=false;
+			bools[0]=true;
+			document.getElementById('s6').src="blank.PNG";
+			document.getElementById('s1').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i34').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[5][0]=1;
+				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
+					smallGameBoard[5]=1;document.getElementById('w6').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i34').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[5][0]=2;
+				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
+					smallGameBoard[5]=2;document.getElementById('w6').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[0]=false;
+				document.getElementById('s1').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[0].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[0]=false;
+				document.getElementById('s1').src="blank.PNG";
+				if (bigGameBoard[5].indexOf(0)!=-1){
+					bools[5]=true;
+					document.getElementById('s6').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+
+
+	<script>
+	document.getElementById('b35').onclick = function() {
+		if(bools[5] && document.getElementById('i35').src.indexOf('blank.PNG')>-1){
+			bools[5]=false;
+			bools[1]=true;
+			document.getElementById('s6').src="blank.PNG";
+			document.getElementById('s2').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i35').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[5][1]=1;
+				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
+					smallGameBoard[5]=1;document.getElementById('w6').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i35').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[5][1]=2;
+				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
+					smallGameBoard[5]=2;document.getElementById('w6').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[1]=false;
+				document.getElementById('s2').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[1].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[1]=false;
+				document.getElementById('s2').src="blank.PNG";
+				if (bigGameBoard[5].indexOf(0)!=-1){
+					bools[5]=true;
+					document.getElementById('s6').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+
+	<script>
+	document.getElementById('b36').onclick = function() {
+		if(bools[5] && document.getElementById('i36').src.indexOf('blank.PNG')>-1){
+			bools[5]=false;
+			bools[2]=true;
+			document.getElementById('s6').src="blank.PNG";
+			document.getElementById('s3').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i36').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[5][2]=1;
+				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
+					smallGameBoard[5]=1;document.getElementById('w6').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i36').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[5][2]=2;
+				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
+					smallGameBoard[5]=2;document.getElementById('w6').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[2]=false;
+				document.getElementById('s3').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[2].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[2]=false;
+				document.getElementById('s3').src="blank.PNG";
+				if (bigGameBoard[5].indexOf(0)!=-1){
+					bools[5]=true;
+					document.getElementById('s6').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b37').onclick = function() {
+		if(bools[3] && document.getElementById('i37').src.indexOf('blank.PNG')>-1){
+			bools[3]=false;
+			bools[3]=true;
+			document.getElementById('s4').src="blank.PNG";
+			document.getElementById('s4').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i37').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[3][3]=1;
+				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
+					smallGameBoard[3]=1;document.getElementById('w4').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i37').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[3][3]=2;
+				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
+					smallGameBoard[3]=2;document.getElementById("w4").src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[3]=false;
+				document.getElementById('s4').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[3].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[3]=false;
+				document.getElementById('s4').src="blank.PNG";
+				if (bigGameBoard[3].indexOf(0)!=-1){
+					bools[3]=true;
+					document.getElementById('s4').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+
+
+	<script>
+	document.getElementById('b38').onclick = function() {
+		if(bools[3] && document.getElementById('i38').src.indexOf('blank.PNG')>-1){
+			bools[3]=false;
+			bools[4]=true;
+			document.getElementById('s4').src="blank.PNG";
+			document.getElementById('s5').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i38').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[3][4]=1;
+				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
+					smallGameBoard[3]=1;document.getElementById('w4').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i38').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[3][4]=2;
+				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
+					smallGameBoard[3]=2;document.getElementById("w4").src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[4]=false;
+				document.getElementById('s5').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[4].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[4]=false;
+				document.getElementById('s5').src="blank.PNG";
+				if (bigGameBoard[3].indexOf(0)!=-1){
+					bools[3]=true;
+					document.getElementById('s4').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+
+	<script>
+	document.getElementById('b39').onclick = function() {
+		if(bools[3] && document.getElementById('i39').src.indexOf('blank.PNG')>-1){
+			bools[3]=false;
+			bools[5]=true;
+			document.getElementById('s4').src="blank.PNG";
+			document.getElementById('s6').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i39').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[3][5]=1;
+				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
+					smallGameBoard[3]=1;document.getElementById('w4').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i39').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[3][5]=2;
+				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
+					smallGameBoard[3]=2;document.getElementById("w4").src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[5]=false;
+				document.getElementById('s6').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[5].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[5]=false;
+				document.getElementById('s6').src="blank.PNG";
+				if (bigGameBoard[3].indexOf(0)!=-1){
+					bools[3]=true;
+					document.getElementById('s4').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b40').onclick = function() {
+		if(bools[4] && document.getElementById('i40').src.indexOf('blank.PNG')>-1){
+			bools[4]=false;
+			bools[3]=true;
+			document.getElementById('s5').src="blank.PNG";
+			document.getElementById('s4').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i40').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[4][3]=1;
+				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
+					smallGameBoard[4]=1;document.getElementById('w5').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i40').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[4][3]=2;
+				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
+					smallGameBoard[4]=2;document.getElementById('w5').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[3]=false;
+				document.getElementById('s4').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[3].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[3]=false;
+				document.getElementById('s4').src="blank.PNG";
+				if (bigGameBoard[4].indexOf(0)!=-1){
+					bools[4]=true;
+					document.getElementById('s5').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b41').onclick = function() {
+		if(bools[4] && document.getElementById('i41').src.indexOf('blank.PNG')>-1){
+			bools[4]=false;
+			bools[4]=true;
+			document.getElementById('s5').src="blank.PNG";
+			document.getElementById('s5').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i41').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[4][4]=1;
+				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
+					smallGameBoard[4]=1;document.getElementById('w5').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i41').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[4][4]=2;
+				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
+					smallGameBoard[4]=2;document.getElementById('w5').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[4]=false;
+				document.getElementById('s5').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[4].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[4]=false;
+				document.getElementById('s5').src="blank.PNG";
+				if (bigGameBoard[4].indexOf(0)!=-1){
+					bools[4]=true;
+					document.getElementById('s5').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b42').onclick = function() {
+		if(bools[4] && document.getElementById('i42').src.indexOf('blank.PNG')>-1){
+			bools[4]=false;
+			bools[5]=true;
+			document.getElementById('s5').src="blank.PNG";
+			document.getElementById('s6').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i42').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[4][5]=1;
+				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
+					smallGameBoard[4]=1;document.getElementById('w5').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i42').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[4][5]=2;
+				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
+					smallGameBoard[4]=2;document.getElementById('w5').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[5]=false;
+				document.getElementById('s6').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[5].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[5]=false;
+				document.getElementById('s6').src="blank.PNG";
+				if (bigGameBoard[4].indexOf(0)!=-1){
+					bools[4]=true;
+					document.getElementById('s5').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b43').onclick = function() {
+		if(bools[5] && document.getElementById('i43').src.indexOf('blank.PNG')>-1){
+			bools[5]=false;
+			bools[3]=true;
+			document.getElementById('s6').src="blank.PNG";
+			document.getElementById('s4').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i43').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[5][3]=1;
+				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
+					smallGameBoard[5]=1;document.getElementById('w6').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i43').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[5][3]=2;
+				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
+					smallGameBoard[5]=2;document.getElementById('w6').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[3]=false;
+				document.getElementById('s4').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[3].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[3]=false;
+				document.getElementById('s4').src="blank.PNG";
+				if (bigGameBoard[5].indexOf(0)!=-1){
+					bools[5]=true;
+					document.getElementById('s6').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b44').onclick = function() {
+		if(bools[5] && document.getElementById('i44').src.indexOf('blank.PNG')>-1){
+			bools[5]=false;
+			bools[4]=true;
+			document.getElementById('s6').src="blank.PNG";
+			document.getElementById('s5').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i44').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[5][4]=1;
+				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
+					smallGameBoard[5]=1;document.getElementById('w6').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i44').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[5][4]=2;
+				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
+					smallGameBoard[5]=2;document.getElementById('w6').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[4]=false;
+				document.getElementById('s5').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[4].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[4]=false;
+				document.getElementById('s5').src="blank.PNG";
+				if (bigGameBoard[5].indexOf(0)!=-1){
+					bools[5]=true;
+					document.getElementById('s6').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b45').onclick = function() {
+		if(bools[5] && document.getElementById('i45').src.indexOf('blank.PNG')>-1){
+			bools[5]=false;
+			bools[5]=true;
+			document.getElementById('s6').src="blank.PNG";
+			document.getElementById('s6').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i45').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[5][5]=1;
+				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
+					smallGameBoard[5]=1;document.getElementById('w6').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i45').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[5][5]=2;
+				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
+					smallGameBoard[5]=2;document.getElementById('w6').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[5]=false;
+				document.getElementById('s6').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[5].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[5]=false;
+				document.getElementById('s6').src="blank.PNG";
+				if (bigGameBoard[5].indexOf(0)!=-1){
+					bools[5]=true;
+					document.getElementById('s6').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	
+	<script>
+	document.getElementById('b46').onclick = function() {
+		if(bools[3] && document.getElementById('i46').src.indexOf('blank.PNG')>-1){
+			bools[3]=false;
+			bools[6]=true;
+			document.getElementById('s4').src="blank.PNG";
+			document.getElementById('s7').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i46').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[3][6]=1;
+				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
+					smallGameBoard[3]=1;document.getElementById('w4').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i46').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[3][6]=2;
+				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
+					smallGameBoard[3]=2;document.getElementById("w4").src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[6]=false;
+				document.getElementById('s7').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[6].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[6]=false;
+				document.getElementById('s7').src="blank.PNG";
+				if (bigGameBoard[3].indexOf(0)!=-1){
+					bools[3]=true;
+					document.getElementById('s4').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b47').onclick = function() {
+		if(bools[3] && document.getElementById('i47').src.indexOf('blank.PNG')>-1){
+			bools[3]=false;
+			bools[7]=true;
+			document.getElementById('s4').src="blank.PNG";
+			document.getElementById('s8').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i47').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[3][7]=1;
+				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
+					smallGameBoard[3]=1;document.getElementById('w4').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i47').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[3][7]=2;
+				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
+					smallGameBoard[3]=2;document.getElementById("w4").src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[7]=false;
+				document.getElementById('s8').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[7].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[7]=false;
+				document.getElementById('s8').src="blank.PNG";
+				if (bigGameBoard[3].indexOf(0)!=-1){
+					bools[3]=true;
+					document.getElementById('s4').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b48').onclick = function() {
+		if(bools[3] && document.getElementById('i48').src.indexOf('blank.PNG')>-1){
+			bools[3]=false;
+			bools[8]=true;
+			document.getElementById('s4').src="blank.PNG";
+			document.getElementById('s9').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i48').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[3][8]=1;
+				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
+					smallGameBoard[3]=1;document.getElementById('w4').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i48').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[3][8]=2;
+				if (isDone(bigGameBoard[3]) && smallGameBoard[3]==0){
+					smallGameBoard[3]=2;document.getElementById("w4").src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[8]=false;
+				document.getElementById('s9').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[8].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[8]=false;
+				document.getElementById('s9').src="blank.PNG";
+				if (bigGameBoard[3].indexOf(0)!=-1){
+					bools[3]=true;
+					document.getElementById('s4').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b49').onclick = function() {
+		if(bools[4] && document.getElementById('i49').src.indexOf('blank.PNG')>-1){
+			bools[4]=false;
+			bools[6]=true;
+			document.getElementById('s5').src="blank.PNG";
+			document.getElementById('s7').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i49').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[4][6]=1;
+				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
+					smallGameBoard[4]=1;document.getElementById('w5').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i49').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[4][6]=2;
+				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
+					smallGameBoard[4]=2;document.getElementById('w5').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[6]=false;
+				document.getElementById('s7').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[6].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[6]=false;
+				document.getElementById('s7').src="blank.PNG";
+				if (bigGameBoard[4].indexOf(0)!=-1){
+					bools[4]=true;
+					document.getElementById('s5').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b50').onclick = function() {
+		if(bools[4] && document.getElementById('i50').src.indexOf('blank.PNG')>-1){
+			bools[4]=false;
+			bools[7]=true;
+			document.getElementById('s5').src="blank.PNG";
+			document.getElementById('s8').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i50').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[4][7]=1;
+				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
+					smallGameBoard[4]=1;document.getElementById('w5').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i50').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[4][7]=2;
+				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
+					smallGameBoard[4]=2;document.getElementById('w5').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[7]=false;
+				document.getElementById('s8').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[7].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[7]=false;
+				document.getElementById('s8').src="blank.PNG";
+				if (bigGameBoard[4].indexOf(0)!=-1){
+					bools[4]=true;
+					document.getElementById('s5').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+
+	<script>
+	document.getElementById('b51').onclick = function() {
+		if(bools[4] && document.getElementById('i51').src.indexOf('blank.PNG')>-1){
+			bools[4]=false;
+			bools[8]=true;
+			document.getElementById('s5').src="blank.PNG";
+			document.getElementById('s9').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i51').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[4][8]=1;
+				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
+					smallGameBoard[4]=1;document.getElementById('w5').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i51').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[4][8]=2;
+				if (isDone(bigGameBoard[4]) && smallGameBoard[4]==0){
+					smallGameBoard[4]=2;document.getElementById('w5').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[8]=false;
+				document.getElementById('s9').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[8].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[8]=false;
+				document.getElementById('s9').src="blank.PNG";
+				if (bigGameBoard[4].indexOf(0)!=-1){
+					bools[4]=true;
+					document.getElementById('s5').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+
+	<script>
+	document.getElementById('b52').onclick = function() {
+		if(bools[5] && document.getElementById('i52').src.indexOf('blank.PNG')>-1){
+			bools[5]=false;
+			bools[6]=true;
+			document.getElementById('s6').src="blank.PNG";
+			document.getElementById('s7').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i52').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[5][6]=1;
+				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
+					smallGameBoard[5]=1;document.getElementById('w6').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i52').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[5][6]=2;
+				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
+					smallGameBoard[5]=2;document.getElementById('w6').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[6]=false;
+				document.getElementById('s7').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[6].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[6]=false;
+				document.getElementById('s7').src="blank.PNG";
+				if (bigGameBoard[5].indexOf(0)!=-1){
+					bools[5]=true;
+					document.getElementById('s6').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+
+	<script>
+	document.getElementById('b53').onclick = function() {
+		if(bools[5] && document.getElementById('i53').src.indexOf('blank.PNG')>-1){
+			bools[5]=false;
+			bools[7]=true;
+			document.getElementById('s6').src="blank.PNG";
+			document.getElementById('s8').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i53').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[5][7]=1;
+				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
+					smallGameBoard[5]=1;document.getElementById('w6').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i53').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[5][7]=2;
+				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
+					smallGameBoard[5]=2;document.getElementById('w6').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[7]=false;
+				document.getElementById('s8').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[7].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[7]=false;
+				document.getElementById('s8').src="blank.PNG";
+				if (bigGameBoard[5].indexOf(0)!=-1){
+					bools[5]=true;
+					document.getElementById('s6').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>	
+
+	<script>
+	document.getElementById('b54').onclick = function() {
+		if(bools[5] && document.getElementById('i54').src.indexOf('blank.PNG')>-1){
+			bools[5]=false;
+			bools[8]=true;
+			document.getElementById('s6').src="blank.PNG";
+			document.getElementById('s9').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i54').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[5][8]=1;
+				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
+					smallGameBoard[5]=1;document.getElementById('w6').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i54').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[5][8]=2;
+				if (isDone(bigGameBoard[5]) && smallGameBoard[5]==0){
+					smallGameBoard[5]=2;document.getElementById('w6').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[8]=false;
+				document.getElementById('s9').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[8].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[8]=false;
+				document.getElementById('s9').src="blank.PNG";
+				if (bigGameBoard[5].indexOf(0)!=-1){
+					bools[5]=true;
+					document.getElementById('s6').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+
+	<script>
+	document.getElementById('b55').onclick = function() {
+		if(bools[6] && document.getElementById('i55').src.indexOf('blank.PNG')>-1){
+			bools[6]=false;
+			bools[0]=true;
+			document.getElementById('s7').src="blank.PNG";
+			document.getElementById('s1').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i55').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[6][0]=1;
+				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
+					smallGameBoard[6]=1;document.getElementById('w7').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i55').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[6][0]=2;
+				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
+					smallGameBoard[6]=2;document.getElementById('w7').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[0]=false;
+				document.getElementById('s1').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[0].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[0]=false;
+				document.getElementById('s1').src="blank.PNG";
+				if (bigGameBoard[6].indexOf(0)!=-1){
+					bools[6]=true;
+					document.getElementById('s7').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b56').onclick = function() {
+		if(bools[6] && document.getElementById('i56').src.indexOf('blank.PNG')>-1){
+			bools[6]=false;
+			bools[1]=true;
+			document.getElementById('s7').src="blank.PNG";
+			document.getElementById('s2').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i56').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[6][1]=1;
+				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
+					smallGameBoard[6]=1;document.getElementById('w7').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i56').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[6][1]=2;
+				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
+					smallGameBoard[6]=2;document.getElementById('w7').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[1]=false;
+				document.getElementById('s2').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[1].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[1]=false;
+				document.getElementById('s2').src="blank.PNG";
+				if (bigGameBoard[6].indexOf(0)!=-1){
+					bools[6]=true;
+					document.getElementById('s7').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b57').onclick = function() {
+		if(bools[6] && document.getElementById('i57').src.indexOf('blank.PNG')>-1){
+			bools[6]=false;
+			bools[2]=true;
+			document.getElementById('s7').src="blank.PNG";
+			document.getElementById('s3').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i57').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[6][2]=1;
+				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
+					smallGameBoard[6]=1;document.getElementById('w7').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i57').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[6][2]=2;
+				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
+					smallGameBoard[6]=2;document.getElementById('w7').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[2]=false;
+				document.getElementById('s3').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[2].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[2]=false;
+				document.getElementById('s3').src="blank.PNG";
+				if (bigGameBoard[6].indexOf(0)!=-1){
+					bools[6]=true;
+					document.getElementById('s7').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b58').onclick = function() {
+		if(bools[7] && document.getElementById('i58').src.indexOf('blank.PNG')>-1){
+			bools[7]=false;
+			bools[0]=true;
+			document.getElementById('s8').src="blank.PNG";
+			document.getElementById('s1').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i58').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[7][0]=1;
+				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
+					smallGameBoard[7]=1;document.getElementById('w8').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i58').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[7][0]=2;
+				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
+					smallGameBoard[7]=2;document.getElementById('w8').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[0]=false;
+				document.getElementById('s1').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[0].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[0]=false;
+				document.getElementById('s1').src="blank.PNG";
+				if (bigGameBoard[7].indexOf(0)!=-1){
+					bools[7]=true;
+					document.getElementById('s8').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b59').onclick = function() {
+		if(bools[7] && document.getElementById('i59').src.indexOf('blank.PNG')>-1){
+			bools[7]=false;
+			bools[1]=true;
+			document.getElementById('s8').src="blank.PNG";
+			document.getElementById('s2').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i59').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[7][1]=1;
+				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
+					smallGameBoard[7]=1;document.getElementById('w8').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i59').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[7][1]=2;
+				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
+					smallGameBoard[7]=2;document.getElementById('w8').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[1]=false;
+				document.getElementById('s2').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[1].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[1]=false;
+				document.getElementById('s2').src="blank.PNG";
+				if (bigGameBoard[7].indexOf(0)!=-1){
+					bools[7]=true;
+					document.getElementById('s8').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b60').onclick = function() {
+		if(bools[7] && document.getElementById('i60').src.indexOf('blank.PNG')>-1){
+			bools[7]=false;
+			bools[2]=true;
+			document.getElementById('s8').src="blank.PNG";
+			document.getElementById('s3').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i60').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[7][2]=1;
+				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
+					smallGameBoard[7]=1;document.getElementById('w8').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i60').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[7][2]=2;
+				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
+					smallGameBoard[7]=2;document.getElementById('w8').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[2]=false;
+				document.getElementById('s3').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[2].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[2]=false;
+				document.getElementById('s3').src="blank.PNG";
+				if (bigGameBoard[7].indexOf(0)!=-1){
+					bools[7]=true;
+					document.getElementById('s8').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b61').onclick = function() {
+		if(bools[8] && document.getElementById('i61').src.indexOf('blank.PNG')>-1){
+			bools[8]=false;
+			bools[0]=true;
+			document.getElementById('s9').src="blank.PNG";
+			document.getElementById('s1').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i61').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[8][0]=1;
+				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
+					smallGameBoard[8]=1;document.getElementById("w9").src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i61').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[8][0]=2;
+				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
+					smallGameBoard[8]=2;document.getElementById('w9').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[0]=false;
+				document.getElementById('s1').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[0].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[0]=false;
+				document.getElementById('s1').src="blank.PNG";
+				if (bigGameBoard[8].indexOf(0)!=-1){
+					bools[8]=true;
+					document.getElementById('s9').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b62').onclick = function() {
+		if(bools[8] && document.getElementById('i62').src.indexOf('blank.PNG')>-1){
+			bools[8]=false;
+			bools[1]=true;
+			document.getElementById('s9').src="blank.PNG";
+			document.getElementById('s2').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i62').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[8][1]=1;
+				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
+					smallGameBoard[8]=1;document.getElementById("w9").src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i62').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[8][1]=2;
+				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
+					smallGameBoard[8]=2;document.getElementById('w9').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[1]=false;
+				document.getElementById('s2').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[1].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[1]=false;
+				document.getElementById('s2').src="blank.PNG";
+				if (bigGameBoard[8].indexOf(0)!=-1){
+					bools[8]=true;
+					document.getElementById('s9').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b63').onclick = function() {
+		if(bools[8] && document.getElementById('i63').src.indexOf('blank.PNG')>-1){
+			bools[8]=false;
+			bools[2]=true;
+			document.getElementById('s9').src="blank.PNG";
+			document.getElementById('s3').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i63').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[8][2]=1;
+				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
+					smallGameBoard[8]=1;document.getElementById("w9").src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i63').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[8][2]=2;
+				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
+					smallGameBoard[8]=2;document.getElementById('w9').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[2]=false;
+				document.getElementById('s3').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[2].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[2]=false;
+				document.getElementById('s3').src="blank.PNG";
+				if (bigGameBoard[8].indexOf(0)!=-1){
+					bools[8]=true;
+					document.getElementById('s9').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b64').onclick = function() {
+		if(bools[6] && document.getElementById('i64').src.indexOf('blank.PNG')>-1){
+			bools[6]=false;
+			bools[3]=true;
+			document.getElementById('s7').src="blank.PNG";
+			document.getElementById('s4').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i64').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[6][3]=1;
+				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
+					smallGameBoard[6]=1;document.getElementById('w7').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i64').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[6][3]=2;
+				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
+					smallGameBoard[6]=2;document.getElementById('w7').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[3]=false;
+				document.getElementById('s4').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[3].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[3]=false;
+				document.getElementById('s4').src="blank.PNG";
+				if (bigGameBoard[6].indexOf(0)!=-1){
+					bools[6]=true;
+					document.getElementById('s7').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>	
+	<script>
+	document.getElementById('b65').onclick = function() {
+		if(bools[6] && document.getElementById('i65').src.indexOf('blank.PNG')>-1){
+			bools[6]=false;
+			bools[4]=true;
+			document.getElementById('s7').src="blank.PNG";
+			document.getElementById('s5').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i65').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[6][4]=1;
+				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
+					smallGameBoard[6]=1;document.getElementById('w7').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i65').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[6][4]=2;
+				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
+					smallGameBoard[6]=2;document.getElementById('w7').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[4]=false;
+				document.getElementById('s5').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[4].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[4]=false;
+				document.getElementById('s5').src="blank.PNG";
+				if (bigGameBoard[6].indexOf(0)!=-1){
+					bools[6]=true;
+					document.getElementById('s7').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b66').onclick = function() {
+		if(bools[6] && document.getElementById('i66').src.indexOf('blank.PNG')>-1){
+			bools[6]=false;
+			bools[5]=true;
+			document.getElementById('s7').src="blank.PNG";
+			document.getElementById('s6').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i66').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[6][5]=1;
+				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
+					smallGameBoard[6]=1;document.getElementById('w7').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i66').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[6][5]=2;
+				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
+					smallGameBoard[6]=2;document.getElementById('w7').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[5]=false;
+				document.getElementById('s6').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[5].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[5]=false;
+				document.getElementById('s6').src="blank.PNG";
+				if (bigGameBoard[6].indexOf(0)!=-1){
+					bools[6]=true;
+					document.getElementById('s7').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b67').onclick = function() {
+		if(bools[7] && document.getElementById('i67').src.indexOf('blank.PNG')>-1){
+			bools[7]=false;
+			bools[3]=true;
+			document.getElementById('s8').src="blank.PNG";
+			document.getElementById('s4').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i67').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[7][3]=1;
+				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
+					smallGameBoard[7]=1;document.getElementById('w8').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i67').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[7][3]=2;
+				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
+					smallGameBoard[7]=2;document.getElementById('w8').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[3]=false;
+				document.getElementById('s4').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[3].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[3]=false;
+				document.getElementById('s4').src="blank.PNG";
+				if (bigGameBoard[7].indexOf(0)!=-1){
+					bools[7]=true;
+					document.getElementById('s8').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b68').onclick = function() {
+		if(bools[7] && document.getElementById('i68').src.indexOf('blank.PNG')>-1){
+			bools[7]=false;
+			bools[4]=true;
+			document.getElementById('s8').src="blank.PNG";
+			document.getElementById('s5').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i68').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[7][4]=1;
+				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
+					smallGameBoard[7]=1;document.getElementById('w8').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i68').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[7][4]=2;
+				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
+					smallGameBoard[7]=2;document.getElementById('w8').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[4]=false;
+				document.getElementById('s5').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[4].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[4]=false;
+				document.getElementById('s5').src="blank.PNG";
+				if (bigGameBoard[7].indexOf(0)!=-1){
+					bools[7]=true;
+					document.getElementById('s8').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b69').onclick = function() {
+		if(bools[7] && document.getElementById('i69').src.indexOf('blank.PNG')>-1){
+			bools[7]=false;
+			bools[5]=true;
+			document.getElementById('s8').src="blank.PNG";
+			document.getElementById('s6').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i69').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[7][5]=1;
+				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
+					smallGameBoard[7]=1;document.getElementById('w8').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i69').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[7][5]=2;
+				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
+					smallGameBoard[7]=2;document.getElementById('w8').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[5]=false;
+				document.getElementById('s6').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[5].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[5]=false;
+				document.getElementById('s6').src="blank.PNG";
+				if (bigGameBoard[7].indexOf(0)!=-1){
+					bools[7]=true;
+					document.getElementById('s8').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b70').onclick = function() {
+		if(bools[8] && document.getElementById('i70').src.indexOf('blank.PNG')>-1){
+			bools[8]=false;
+			bools[3]=true;
+			document.getElementById('s9').src="blank.PNG";
+			document.getElementById('s4').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i70').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[8][3]=1;
+				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
+					smallGameBoard[8]=1;document.getElementById("w9").src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i70').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[8][3]=2;
+				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
+					smallGameBoard[8]=2;document.getElementById('w9').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[3]=false;
+				document.getElementById('s4').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[3].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[3]=false;
+				document.getElementById('s4').src="blank.PNG";
+				if (bigGameBoard[8].indexOf(0)!=-1){
+					bools[8]=true;
+					document.getElementById('s9').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b71').onclick = function() {
+		if(bools[8] && document.getElementById('i71').src.indexOf('blank.PNG')>-1){
+			bools[8]=false;
+			bools[4]=true;
+			document.getElementById('s9').src="blank.PNG";
+			document.getElementById('s5').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i71').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[8][4]=1;
+				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
+					smallGameBoard[8]=1;document.getElementById("w9").src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i71').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[8][4]=2;
+				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
+					smallGameBoard[8]=2;document.getElementById('w9').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[4]=false;
+				document.getElementById('s5').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[4].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[4]=false;
+				document.getElementById('s5').src="blank.PNG";
+				if (bigGameBoard[8].indexOf(0)!=-1){
+					bools[8]=true;
+					document.getElementById('s9').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b72').onclick = function() {
+		if(bools[8] && document.getElementById('i72').src.indexOf('blank.PNG')>-1){
+			bools[8]=false;
+			bools[5]=true;
+			document.getElementById('s9').src="blank.PNG";
+			document.getElementById('s6').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i72').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[8][5]=1;
+				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
+					smallGameBoard[8]=1;document.getElementById("w9").src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i72').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[8][5]=2;
+				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
+					smallGameBoard[8]=2;document.getElementById('w9').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[5]=false;
+				document.getElementById('s6').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[5].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[5]=false;
+				document.getElementById('s6').src="blank.PNG";
+				if (bigGameBoard[8].indexOf(0)!=-1){
+					bools[8]=true;
+					document.getElementById('s9').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b73').onclick = function() {
+		if(bools[6] && document.getElementById('i73').src.indexOf('blank.PNG')>-1){
+			bools[6]=false;
+			bools[6]=true;
+			document.getElementById('s7').src="blank.PNG";
+			document.getElementById('s7').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i73').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[6][6]=1;
+				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
+					smallGameBoard[6]=1;document.getElementById('w7').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i73').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[6][6]=2;
+				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
+					smallGameBoard[6]=2;document.getElementById('w7').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[6]=false;
+				document.getElementById('s7').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[6].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[6]=false;
+				document.getElementById('s7').src="blank.PNG";
+				if (bigGameBoard[6].indexOf(0)!=-1){
+					bools[6]=true;
+					document.getElementById('s7').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b74').onclick = function() {
+		if(bools[6] && document.getElementById('i74').src.indexOf('blank.PNG')>-1){
+			bools[6]=false;
+			bools[7]=true;
+			document.getElementById('s7').src="blank.PNG";
+			document.getElementById('s8').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i74').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[6][7]=1;
+				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
+					smallGameBoard[6]=1;document.getElementById('w7').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i74').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[6][7]=2;
+				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
+					smallGameBoard[6]=2;document.getElementById('w7').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[7]=false;
+				document.getElementById('s8').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[7].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[7]=false;
+				document.getElementById('s8').src="blank.PNG";
+				if (bigGameBoard[6].indexOf(0)!=-1){
+					bools[6]=true;
+					document.getElementById('s7').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b75').onclick = function() {
+		if(bools[6] && document.getElementById('i75').src.indexOf('blank.PNG')>-1){
+			bools[6]=false;
+			bools[8]=true;
+			document.getElementById('s7').src="blank.PNG";
+			document.getElementById('s9').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i75').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[6][8]=1;
+				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
+					smallGameBoard[6]=1;document.getElementById('w7').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i75').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[6][8]=2;
+				if (isDone(bigGameBoard[6]) && smallGameBoard[6]==0){
+					smallGameBoard[6]=2;document.getElementById('w7').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[8]=false;
+				document.getElementById('s9').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[8].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[8]=false;
+				document.getElementById('s9').src="blank.PNG";
+				if (bigGameBoard[6].indexOf(0)!=-1){
+					bools[6]=true;
+					document.getElementById('s7').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b76').onclick = function() {
+		if(bools[7] && document.getElementById('i76').src.indexOf('blank.PNG')>-1){
+			bools[7]=false;
+			bools[6]=true;
+			document.getElementById('s8').src="blank.PNG";
+			document.getElementById('s7').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i76').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[7][6]=1;
+				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
+					smallGameBoard[7]=1;document.getElementById('w8').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i76').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[7][6]=2;
+				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
+					smallGameBoard[7]=2;document.getElementById('w8').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[6]=false;
+				document.getElementById('s7').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[6].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[6]=false;
+				document.getElementById('s7').src="blank.PNG";
+				if (bigGameBoard[7].indexOf(0)!=-1){
+					bools[7]=true;
+					document.getElementById('s8').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b77').onclick = function() {
+		if(bools[7] && document.getElementById('i77').src.indexOf('blank.PNG')>-1){
+			bools[7]=false;
+			bools[7]=true;
+			document.getElementById('s8').src="blank.PNG";
+			document.getElementById('s8').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i77').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[7][7]=1;
+				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
+					smallGameBoard[7]=1;document.getElementById('w8').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i77').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[7][7]=2;
+				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
+					smallGameBoard[7]=2;document.getElementById('w8').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[7]=false;
+				document.getElementById('s8').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[7].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[7]=false;
+				document.getElementById('s7').src="blank.PNG";
+				if (bigGameBoard[7].indexOf(0)!=-1){
+					bools[7]=true;
+					document.getElementById('s8').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b78').onclick = function() {
+		if(bools[7] && document.getElementById('i78').src.indexOf('blank.PNG')>-1){
+			bools[7]=false;
+			bools[8]=true;
+			document.getElementById('s8').src="blank.PNG";
+			document.getElementById('s9').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i78').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[7][8]=1;
+				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
+					smallGameBoard[7]=1;document.getElementById('w8').src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i78').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[7][8]=2;
+				if (isDone(bigGameBoard[7]) && smallGameBoard[7]==0){
+					smallGameBoard[7]=2;document.getElementById('w8').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[8]=false;
+				document.getElementById('s9').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[8].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[8]=false;
+				document.getElementById('s9').src="blank.PNG";
+				if (bigGameBoard[7].indexOf(0)!=-1){
+					bools[7]=true;
+					document.getElementById('s8').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b79').onclick = function() {
+		if(bools[8] && document.getElementById('i79').src.indexOf('blank.PNG')>-1){
+			bools[8]=false;
+			bools[6]=true;
+			document.getElementById('s9').src="blank.PNG";
+			document.getElementById('s7').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i79').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[8][6]=1;
+				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
+					smallGameBoard[8]=1;document.getElementById("w9").src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i79').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[8][6]=2;
+				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
+					smallGameBoard[8]=2;document.getElementById('w9').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[6]=false;
+				document.getElementById('s7').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[6].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[6]=false;
+				document.getElementById('s7').src="blank.PNG";
+				if (bigGameBoard[8].indexOf(0)!=-1){
+					bools[8]=true;
+					document.getElementById('s9').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b80').onclick = function() {
+		if(bools[8] && document.getElementById('i80').src.indexOf('blank.PNG')>-1){
+			bools[8]=false;
+			bools[7]=true;
+			document.getElementById('s9').src="blank.PNG";
+			document.getElementById('s8').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i80').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[8][7]=1;
+				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
+					smallGameBoard[8]=1;document.getElementById("w9").src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i80').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[8][7]=2;
+				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
+					smallGameBoard[8]=2;document.getElementById('w9').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[7]=false;
+				document.getElementById('s8').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[7].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[7]=false;
+				document.getElementById('s8').src="blank.PNG";
+				if (bigGameBoard[8].indexOf(0)!=-1){
+					bools[8]=true;
+					document.getElementById('s9').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+	<script>
+	document.getElementById('b81').onclick = function() {
+		if(bools[8] && document.getElementById('i81').src.indexOf('blank.PNG')>-1){
+			bools[8]=false;
+			bools[8]=true;
+			document.getElementById('s9').src="blank.PNG";
+			document.getElementById('s9').src="square.PNG";
+			if(turn==1){
+				document.getElementById('i81').src="ex.PNG";
+				document.getElementById('winIMG').src="oh.PNG";
+				turn=2;
+				bigGameBoard[8][8]=1;
+				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
+					smallGameBoard[8]=1;document.getElementById("w9").src="ex.PNG";
+				}
+				 
+			}else{
+				document.getElementById('i81').src="oh.PNG";
+				document.getElementById('winIMG').src="ex.PNG";
+				turn=1;
+				bigGameBoard[8][8]=2;
+				if (isDone(bigGameBoard[8]) && smallGameBoard[8]==0){
+					smallGameBoard[8]=2;document.getElementById('w9').src="oh.PNG";
+				}
+			}
+			if (isDone(smallGameBoard)){
+				bools[8]=false;
+				document.getElementById('s9').src="blank.PNG";
+				document.getElementById('winText').innerHTML="Game Over! The Winner Is:";
+				if (turn==2) document.getElementById('winIMG').src="ex.PNG";
+				else document.getElementById('winIMG').src="oh.PNG";
+				turn=0;
+		
+			}
+			else if (bigGameBoard[8].indexOf(0)==-1){
+			window.alert("Since the target board is full, the next turn will be in the same board as the last turn. If that's not an option, the next turn will be in a random board.");
+				bools[8]=false;
+				document.getElementById('s9').src="blank.PNG";
+				if (bigGameBoard[8].indexOf(0)!=-1){
+					bools[8]=true;
+					document.getElementById('s9').src="square.PNG";
+				}else{
+					for (x=0;x<9;x++){
+						if (bigGameBoard[x].indexOf(0)!=-1){
+							bools[x]=true;
+							document.getElementById("s"+(x+1)).src="square.PNG";
+							break;
+						}
+					}
+				}
+			}
+			if (turn==2) setTimeout(computePlay,1500);
+			
+		}
+	}
+	</script>
+
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-102884042-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>
