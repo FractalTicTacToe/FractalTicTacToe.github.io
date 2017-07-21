@@ -342,10 +342,11 @@ function computePlay(){
     	var winnable=almostDone(bigGameBoard[k]);
     	for (g=0;g<9;g++){
     	gameDict[g] = gameDict[g].concat([winnable[g]]);
-    	gameDict.sort(function(first,second){
+    	}
+	    gameDict.sort(function(first,second){
     	return second[2]-first[2];
     	});
-    	}
+	    console.log(gameDict);
 	     var y=0;
 	 while (turn==2){
 		
