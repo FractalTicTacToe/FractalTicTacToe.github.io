@@ -281,37 +281,37 @@
       <script>
       function almostDone(arr){
       var ret=[0,0,0,0,0,0,0,0,0];
-      if (arr[0]==arr[1]&&arr[0]!=0)ret[2]=arr[0];
-      if (arr[0]==arr[2]&&arr[0]!=0)ret[1]=arr[0];
-      if (arr[1]==arr[2]&&arr[1]!=0)ret[0]=arr[1];
+      if (arr[0]==arr[1]&&arr[0]!=0&&!isDone(arr))ret[2]=arr[0];
+      if (arr[0]==arr[2]&&arr[0]!=0&&!isDone(arr))ret[1]=arr[0];
+      if (arr[1]==arr[2]&&arr[1]!=0&&!isDone(arr))ret[0]=arr[1];
       
-      if (arr[3]==arr[4]&&arr[3]!=0)ret[5]=arr[3];
-      if (arr[3]==arr[5]&&arr[3]!=0)ret[4]=arr[3];
-      if (arr[4]==arr[5]&&arr[4]!=0)ret[3]=arr[4];
+      if (arr[3]==arr[4]&&arr[3]!=0&&!isDone(arr))ret[5]=arr[3];
+      if (arr[3]==arr[5]&&arr[3]!=0&&!isDone(arr))ret[4]=arr[3];
+      if (arr[4]==arr[5]&&arr[4]!=0&&!isDone(arr))ret[3]=arr[4];
       
-      if (arr[6]==arr[7]&&arr[6]!=0)ret[8]=arr[6];
-      if (arr[6]==arr[8]&&arr[6]!=0)ret[7]=arr[6];
-      if (arr[7]==arr[8]&&arr[7]!=0)ret[6]=arr[7];
+      if (arr[6]==arr[7]&&arr[6]!=0&&!isDone(arr))ret[8]=arr[6];
+      if (arr[6]==arr[8]&&arr[6]!=0&&!isDone(arr))ret[7]=arr[6];
+      if (arr[7]==arr[8]&&arr[7]!=0&&!isDone(arr))ret[6]=arr[7];
       
-      if (arr[0]==arr[3]&&arr[0]!=0)ret[6]=arr[0];
-      if (arr[0]==arr[6]&&arr[0]!=0)ret[3]=arr[0];
-      if (arr[3]==arr[6]&&arr[3]!=0)ret[0]=arr[3];
+      if (arr[0]==arr[3]&&arr[0]!=0&&!isDone(arr))ret[6]=arr[0];
+      if (arr[0]==arr[6]&&arr[0]!=0&&!isDone(arr))ret[3]=arr[0];
+      if (arr[3]==arr[6]&&arr[3]!=0&&!isDone(arr))ret[0]=arr[3];
       
-      if (arr[1]==arr[4]&&arr[1]!=0)ret[7]=arr[1];
-      if (arr[1]==arr[7]&&arr[1]!=0)ret[4]=arr[1];
-      if (arr[4]==arr[7]&&arr[1]!=0)ret[1]=arr[4];
+      if (arr[1]==arr[4]&&arr[1]!=0&&!isDone(arr))ret[7]=arr[1];
+      if (arr[1]==arr[7]&&arr[1]!=0&&!isDone(arr))ret[4]=arr[1];
+      if (arr[4]==arr[7]&&arr[4]!=0&&!isDone(arr))ret[1]=arr[4];
       
-      if (arr[2]==arr[5]&&arr[2]!=0)ret[8]=arr[2];
-      if (arr[2]==arr[8]&&arr[2]!=0)ret[5]=arr[2];
-      if (arr[5]==arr[8]&&arr[5]!=0)ret[2]=arr[5];
+      if (arr[2]==arr[5]&&arr[2]!=0&&!isDone(arr))ret[8]=arr[2];
+      if (arr[2]==arr[8]&&arr[2]!=0&&!isDone(arr))ret[5]=arr[2];
+      if (arr[5]==arr[8]&&arr[5]!=0&&!isDone(arr))ret[2]=arr[5];
       
-      if (arr[0]==arr[4]&&arr[0]!=0)ret[8]=arr[0];
-      if (arr[0]==arr[8]&&arr[0]!=0)ret[4]=arr[0];
-      if (arr[4]==arr[8]&&arr[4]!=0)ret[0]=arr[4];
+      if (arr[0]==arr[4]&&arr[0]!=0&&!isDone(arr))ret[8]=arr[0];
+      if (arr[0]==arr[8]&&arr[0]!=0&&!isDone(arr))ret[4]=arr[0];
+      if (arr[4]==arr[8]&&arr[4]!=0&&!isDone(arr))ret[0]=arr[4];
       
-      if (arr[2]==arr[4]&&arr[2]!=0)ret[6]=arr[2];
-      if (arr[4]==arr[6]&&arr[4]!=0)ret[2]=arr[4];
-      if (arr[2]==arr[6]&&arr[2]!=0)ret[4]=arr[2];
+      if (arr[2]==arr[4]&&arr[2]!=0&&!isDone(arr))ret[6]=arr[2];
+      if (arr[4]==arr[6]&&arr[4]!=0&&!isDone(arr))ret[2]=arr[4];
+      if (arr[2]==arr[6]&&arr[2]!=0&&!isDone(arr))ret[4]=arr[2];
       
       return ret;
       }
@@ -330,23 +330,30 @@ function computePlay(){
     for (j=0;j<9;j++){
       if (bigGameBoard[x][j]==1) count++;
     }
-    gameDict[x]=[x,count];
+    gameDict[x]=[x,count,0,0];
+    if (isDone(bigGameBoard[x])){gameDict[x][3]=1};
   }
-  gameDict.sort(function(first,second){
-	  return second[1]-first[1];
-  });
+  
  
   
   for (k=0;k<9;k++){
     if (bools[k]){
     	var winnable=almostDone(bigGameBoard[k]);
+    	console.log(winnable);
     	for (g=0;g<9;g++){
-    	gameDict[g] = gameDict[g].concat([winnable[g]]);
+    	gameDict[g][2]=winnable[g];
     	}
+    	
+    	gameDict.sort(function(first,second){
+	  return second[1]-first[1];
+  });
+  gameDict.sort(function(first,second){
+	  return second[3]-first[3];
+  });
 	    gameDict.sort(function(first,second){
     	return second[2]-first[2];
     	});
-	    console.log(gameDict);
+	    for (c=0;c<9;c++){console.log(gameDict[c]);}
 	     var y=0;
 	 while (turn==2){
 		
