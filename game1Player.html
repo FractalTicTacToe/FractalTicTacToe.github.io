@@ -278,11 +278,51 @@
 		}else return false;
 	}
       </script>
+      <script>
+      function almostDone(arr){
+      var ret=[0,0,0,0,0,0,0,0,0];
+      if (arr[0]==arr[1]&&arr[0]!=0)ret[2]=arr[0];
+      if (arr[0]==arr[2]&&arr[0]!=0)ret[1]=arr[0];
+      if (arr[1]==arr[2]&&arr[1]!=0)ret[0]=arr[1];
+      
+      if (arr[3]==arr[4]&&arr[3]!=0)ret[5]=arr[3];
+      if (arr[3]==arr[5]&&arr[3]!=0)ret[4]=arr[3];
+      if (arr[4]==arr[5]&&arr[4]!=0)ret[3]=arr[4];
+      
+      if (arr[6]==arr[7]&&arr[6]!=0)ret[8]=arr[6];
+      if (arr[6]==arr[8]&&arr[6]!=0)ret[7]=arr[6];
+      if (arr[7]==arr[8]&&arr[7]!=0)ret[6]=arr[7];
+      
+      if (arr[0]==arr[3]&&arr[0]!=0)ret[6]=arr[0];
+      if (arr[0]==arr[6]&&arr[0]!=0)ret[3]=arr[0];
+      if (arr[3]==arr[6]&&arr[3]!=0)ret[0]=arr[3];
+      
+      if (arr[1]==arr[4]&&arr[1]!=0)ret[7]=arr[1];
+      if (arr[1]==arr[7]&&arr[1]!=0)ret[4]=arr[1];
+      if (arr[4]==arr[7]&&arr[1]!=0)ret[1]=arr[4];
+      
+      if (arr[2]==arr[5]&&arr[2]!=0)ret[8]=arr[2];
+      if (arr[2]==arr[8]&&arr[2]!=0)ret[5]=arr[2];
+      if (arr[5]==arr[8]&&arr[5]!=0)ret[2]=arr[5];
+      
+      if (arr[0]==arr[4]&&arr[0]!=0)ret[8]=arr[0];
+      if (arr[0]==arr[8]&&arr[0]!=0)ret[4]=arr[0];
+      if (arr[4]==arr[8]&&arr[4]!=0)ret[0]=arr[4];
+      
+      if (arr[2]==arr[4]&&arr[2]!=0)ret[6]=arr[2];
+      if (arr[4]==arr[6]&&arr[4]!=0)ret[2]=arr[4];
+      if (arr[2]==arr[6]&&arr[2]!=0)ret[4]=arr[2];
+      
+      return ret;
+      }
+      </script>
+      
 <script>
 function computePlay(){
   var max=0;
   var ret=0;
   var gameDict = [0,0,0,0,0,0,0,0,0];
+  
   for (x=0;x<9;x++){
     var count=0;
    
@@ -299,6 +339,13 @@ function computePlay(){
   
   for (k=0;k<9;k++){
     if (bools[k]){
+    	var winnable=almostDone(bigGameBoard[k]);
+    	for (g=0;g<9;g++){
+    	gameDict[g] = gameDict[g].concat([winnable[g]]);
+    	gameDict.sort(function(first,second){
+    	return second[2]-first[2];
+    	});
+    	}
 	     var y=0;
 	 while (turn==2){
 		
@@ -311,7 +358,6 @@ function computePlay(){
     }
   }
 }
-
 	
 	document.getElementById('b1').onclick = function(){
 		if(bools[0] && document.getElementById('i1').src.indexOf('blank.PNG')>-1){
