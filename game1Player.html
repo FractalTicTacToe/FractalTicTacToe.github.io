@@ -330,7 +330,7 @@ function computePlay(){
     for (j=0;j<9;j++){
       if (bigGameBoard[x][j]==1) count++;
     }
-    gameDict[x]=[x,count,0,0,0,0,0,0];
+    gameDict[x]=[x,count,0,0,0,0,3,0];
     if (isDone(bigGameBoard[x])){gameDict[x][3]=1};
   }
   
@@ -373,7 +373,7 @@ gameDict.sort(function(first,second){
     	return second[2]-first[2];
     	});
 	    gameDict.sort(function(first,second){
-	  return first[6]-second[6];
+	  return second[6]-first[6];
   });	
 	    for (c=0;c<9;c++){console.log(gameDict[c]);}
 	     var y=0;
