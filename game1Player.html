@@ -345,8 +345,7 @@ function computePlay(){
     	if (winnable2.indexOf(1)>-1)gameDict[g][5]=1;
 	if (winnable3[g]==2)gameDict[g][7]=winnable3[g];
 	if (winnable3[g]!=0 && winnable2.indexOf(winnable3[g])>-1){
-		//if (!(winnable3[g]==2 && winnable2[g]==2 && g==k))
-		gameDict[g][6]=winnable3[g];
+		if (!(winnable3[g]==2 && winnable[g]==2))gameDict[g][6]=winnable3[g];
 	}
     	if (winnable[g]==2)gameDict[g][2]=winnable[g];
     	else gameDict[g][4]=winnable[g];
