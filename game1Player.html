@@ -330,7 +330,7 @@ function computePlay(){
     for (j=0;j<9;j++){
       if (bigGameBoard[x][j]==1) count++;
     }
-    gameDict[x]=[x,count,0,0,0,0,3,0];
+    gameDict[x]=[x,count,0,0,0,0,3,0,0];
     if (isDone(bigGameBoard[x])){gameDict[x][3]=1};
   }
   
@@ -348,6 +348,7 @@ function computePlay(){
 		//if (!(winnable3[g]==2 && winnable[g]==2))
 		gameDict[g][6]=winnable3[g];
 	}
+	if (winnable3[g]==2 && winnable2.indexOf(2)>-1 && winnable[g]==2 )gameDict[g][8]=2;
     	if (winnable[g]==2)gameDict[g][2]=winnable[g];
     	else gameDict[g][4]=winnable[g];
     	}
@@ -375,6 +376,9 @@ gameDict.sort(function(first,second){
     	});
 	    gameDict.sort(function(first,second){
 	  return second[6]-first[6];
+  });	
+	    gameDict.sort(function(first,second){
+	  return second[8]-first[8];
   });	
 	    for (c=0;c<9;c++){console.log(gameDict[c]);}
 	     var y=0;
