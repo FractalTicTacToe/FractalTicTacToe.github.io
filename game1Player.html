@@ -338,6 +338,7 @@ function computePlay(){
 		    if (bigGameBoard[x][z]==0)newCount++;
 	    }
 	    gameDict[x][9]=newCount;
+	    if (newCount==0)gameDict[x][9]=11;
     }
   }
   
