@@ -330,7 +330,7 @@ function computePlay(){
     for (j=0;j<9;j++){
       if (bigGameBoard[x][j]==1) count++;
     }
-    gameDict[x]=[x,count,0,0,0,0,3,0,0,9];
+    gameDict[x]=[x,count,0,0,0,0,3,0,0,10];
     if (isDone(bigGameBoard[x])){
 	    gameDict[x][3]=1;
 	    var newCount=0;
