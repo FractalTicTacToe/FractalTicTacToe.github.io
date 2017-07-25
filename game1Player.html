@@ -338,7 +338,7 @@ function computePlay(){
 		    if (bigGameBoard[x][z]==0)newCount++;
 	    }
 	    gameDict[x][9]=newCount;
-	    if (newCount==0)gameDict[x][9]=10;
+	    if (newCount==0)gameDict[x][9]=12;
 	   
     }
   }
@@ -350,6 +350,7 @@ function computePlay(){
     	var winnable=almostDone(bigGameBoard[k]);
     	console.log(winnable);
     	for (g=0;g<9;g++){
+	if (isDone(bigGameBoard[k])&&gameDict[g][9]==12)gameDict[g][9]=10;
     	var winnable2=almostDone(bigGameBoard[g]);
     	if (winnable2.indexOf(1)>-1)gameDict[g][5]=1;
 	if (winnable3[g]==2)gameDict[g][7]=winnable3[g];
