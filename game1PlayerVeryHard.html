@@ -29,9 +29,9 @@
 </head>
 
  
-   <body >
+   <body>
 	
-      <div class="header" onload="computePlay()" src="/default.asp">
+      <div class="header">
 	<h1 style="text-align:center">
 	Fractal Tic-Tac-Toe
 	</h1>
@@ -87,7 +87,11 @@
 	<div class="game" style="z-index:20;">
 	<!buttons>
 	<button id="b1" class="gameBut" style="width:45px;height:45px;top:45px;left:28px;position:absolute"></button>
-	
+	<script>
+	document.getElementById('b1').onclick = function() {
+		
+	}
+	</script>
 	<button id="b2"class="gameBut" style="width:45px;height:45px;top:45px;left:85px;position:absolute">
 	<button id="b3"class="gameBut" style="width:45px;height:45px;top:45px;left:142px;position:absolute">
 	<button id="b4" class="gameBut"style="width:45px;height:45px;top:45px;left:223px;position:absolute">
@@ -315,7 +319,6 @@
       
 <script>
 function computePlay(){
-
   var max=0;
   var ret=0;
   var gameDict = [0,0,0,0,0,0,0,0,0];
@@ -325,10 +328,19 @@ function computePlay(){
    
     
     for (j=0;j<9;j++){
-      if (bigGameBoard[x][j]==2) count++;
+      if (bigGameBoard[x][j]==1) count++;
     }
-    gameDict[x]=[x,count,0,0,0,0,0,0];
-    if (isDone(bigGameBoard[x])){gameDict[x][3]=1};
+    gameDict[x]=[x,count,0,0,0,0,3,0,0,11];
+    if (isDone(bigGameBoard[x])){
+	    gameDict[x][3]=1;
+	    var newCount=0;
+	    for (z=0;z<9;z++){
+		    if (bigGameBoard[x][z]==0)newCount++;
+	    }
+	    gameDict[x][9]=newCount;
+	    if (newCount==0)gameDict[x][9]=12;
+	   
+    }
   }
   
  
@@ -338,10 +350,15 @@ function computePlay(){
     	var winnable=almostDone(bigGameBoard[k]);
     	console.log(winnable);
     	for (g=0;g<9;g++){
+	if (isDone(bigGameBoard[k])&&gameDict[g][9]==12)gameDict[g][9]=10;
     	var winnable2=almostDone(bigGameBoard[g]);
     	if (winnable2.indexOf(2)>-1)gameDict[g][5]=1;
 	if (winnable3[g]==1)gameDict[g][7]=winnable3[g];
-	if (winnable3[g]!=0 && winnable2.indexOf(winnable3[g])>-1)gameDict[g][6]=winnable3[g];
+	if (winnable3[g]!=0 && winnable2.indexOf(winnable3[g])>-1){
+		//if (!(winnable3[g]==2 && winnable[g]==2))
+		gameDict[g][6]=winnable3[g];
+	}
+	if (winnable3[g]==1 && winnable2.indexOf(2)>-1 && winnable[g]==1 )gameDict[g][8]=2;
     	if (winnable[g]==1)gameDict[g][2]=winnable[g];
     	else gameDict[g][4]=winnable[g];
     	}
@@ -361,6 +378,9 @@ gameDict.sort(function(first,second){
   gameDict.sort(function(first,second){
 	  return second[3]-first[3];
   });
+	    gameDict.sort(function(first,second){
+	  return first[9]-second[9];
+  });
    gameDict.sort(function(first,second){
 	  return first[7]-second[7];
   });	
@@ -368,7 +388,10 @@ gameDict.sort(function(first,second){
     	return second[2]-first[2];
     	});
 	    gameDict.sort(function(first,second){
-	  return first[6]-second[6];
+	  return second[6]-first[6];
+  });	
+	    gameDict.sort(function(first,second){
+	  return second[8]-first[8];
   });	
 	    for (c=0;c<9;c++){console.log(gameDict[c]);}
 	     var y=0;
@@ -4944,9 +4967,10 @@ gameDict.sort(function(first,second){
 		}
 	}
 	</script>
-<script>
-	document.getElementById('b41').click();
-	</script>
+	<script>
+	computePlay();
+	</script
+
 	<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
